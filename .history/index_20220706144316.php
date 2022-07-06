@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheLibrary</title>
-    <link rel="icon" href="./src/public/images/book.png">
     <!-- bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>    <!-- css link -->
+    <script type="css" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"></script>
+    <script type="js" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- css link -->
     <link rel="stylesheet" href="./src/public/css/main.css">
 </head>
 <body>
@@ -29,10 +29,7 @@
             case '/':
                 require __DIR__ . '/src/public/pages/sign-in.page.php';
                 break;
-    
-            case '':
-                require __DIR__ . '/src/public/pages/sign-in.page.php';
-                break;
+
             case '/signUp':
                 require __DIR__ . '/src/public/pages/sign-up.page.php';
                 break;

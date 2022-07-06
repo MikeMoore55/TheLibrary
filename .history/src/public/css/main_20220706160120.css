@@ -186,7 +186,7 @@ body{
 
 @media (min-width: 1000px) {
     .sign-in-form{
-        top: 18%;
+        top: 20%;
         width: 70%;
         left: 15%;
         padding: 2% 2% 2% 2%;
@@ -202,9 +202,8 @@ body{
     }
     
     .sign-in-form .btn-override{
-        margin-left: 35%;
+        margin-left: 25%;
         font-size: 1em;
-        width: 30%;
     }
     
     .sign-in-form p{
@@ -212,6 +211,6 @@ body{
     }
 
     .sign-in-form input{
-        font-size: 1em;
+        font-size: 1.8em;
     }
 }

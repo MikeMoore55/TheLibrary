@@ -7,19 +7,10 @@
             Username:
         </label>
         <input type="text" class="form-control" id="exampleFormControlInput1" name="username">
-        <div class="invalid-feedback">
-            Please fill in your username
-        </div>
         <label for="exampleFormControlInput2" class="form-label">
             Password:
         </label>
-        <div class="invalid-feedback">
-            Please fill in your password.
-        </div>
         <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="*****" name="password">
-        <br>
-        <input type="submit" class="btn btn-primary mb-3 btn-override" name="signIn" value="Sign In">
-        <p>Don't have an account? <a href="signUp">Create One!</a></p>
-        
+        <input type="submit" class="btn btn-primary mb-3" name="signIn" value="Sign In">
     </form>
 </main>

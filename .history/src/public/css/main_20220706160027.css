@@ -185,33 +185,5 @@ body{
 }
 
 @media (min-width: 1000px) {
-    .sign-in-form{
-        top: 18%;
-        width: 70%;
-        left: 15%;
-        padding: 2% 2% 2% 2%;
-    }
-    
-    .sign-in-form h2{
-        font-size: 2em;
-    }
-    
-    .sign-in-form label{
-        font-size: 1em;
-        margin-top: 3%;
-    }
-    
-    .sign-in-form .btn-override{
-        margin-left: 35%;
-        font-size: 1em;
-        width: 30%;
-    }
-    
-    .sign-in-form p{
-        font-size: 0.6em;
-    }
 
-    .sign-in-form input{
-        font-size: 1em;
-    }
 }
