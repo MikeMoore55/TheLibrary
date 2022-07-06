@@ -45,7 +45,7 @@
         };
 
         /* -- footer -- */
-        include "/MAMP/htdocs/TheLibrary/src/includes/footer.inc.php";
+        include "/MAMP/htdocs/TheLibrary/src/includes/header.inc.php";
 
     ?>
 </body>

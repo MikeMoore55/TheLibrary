@@ -1,4 +1,4 @@
 <!-- footer -->
-<footer class="footer">
+<footer>
     <p>TheLibrary @2022</p>
 </footer>

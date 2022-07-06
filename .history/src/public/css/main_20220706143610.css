@@ -15,7 +15,7 @@ body{
     background-color: white;
     top: 0%;
     left: 0%;
-    padding: 2% 2% 2% 2%;
+    padding: 1% 2% 1% 2%;
     display: flex;
     box-shadow: rgb(155, 154, 154) 0px 3px 5px 2px;
     z-index: 5;
@@ -23,7 +23,7 @@ body{
 
 .header img{
     position: relative;
-    width: 14%;
+    width: 10%;
     height: auto;
 }
 
@@ -58,7 +58,7 @@ body{
     }
     
     .header img{
-        width: 6%;
+        width: 7%;
     }
     
     .header h1{
