@@ -16,15 +16,15 @@
 
         switch ($request) { 
             case '/':
-                require __DIR__ . '/src/public/pages/sign-in.page.php';
+                require __DIR__ . '/src/public/pages/landing-page.php';
                 break;
 
-            case '/signUp':
-                require __DIR__ . '/src/public/pages/sign-up.page.php';
+            case '/signIn':
+                require __DIR__ . '/src/public/pages/login-pages/sign-in.page.php';
                 break;
             
-            case '/home':
-                require __DIR__ . '/src/public/pages/login-pages/home.page.php';
+            case '/signUp':
+                require __DIR__ . '/src/public/pages/login-pages/sign-up.page.php';
                 break;
 
             default:
