@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(220, 220, 220);
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    top: 0%;
+    left: 0%;
+}
+
+.header h1{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
