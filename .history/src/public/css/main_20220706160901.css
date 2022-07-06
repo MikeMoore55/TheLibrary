@@ -106,7 +106,7 @@ body{
 
 @media (min-width: 1000px) {
     .footer{
-        height: 8%;
+        height: 9%;
         padding: 0.5% 2% 0.5% 2%;
 
     }
@@ -298,7 +298,7 @@ body{
     
     .sign-up-form label{
         font-size: 1em;
-        margin-top: 2%;
+        margin-top: 3%;
     }
     
     .sign-up-form .btn-override{

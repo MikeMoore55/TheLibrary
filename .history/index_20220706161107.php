@@ -34,10 +34,9 @@
                 require __DIR__ . '/src/public/pages/sign-in.page.php';
                 break;
               
-            case '/signIn':
+            case 'signIn':
                 require __DIR__ . '/src/public/pages/sign-in.page.php';
                 break;
-
             case '/signUp':
                 require __DIR__ . '/src/public/pages/sign-up.page.php';
                 break;

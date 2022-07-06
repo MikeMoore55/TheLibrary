@@ -1,5 +1,7 @@
 <!-- this is the page for when new users want to create a account for TheLibrary -->
 
+<!-- this is the page for when user whats to sign in to his/her library account -->
+
 <main>
     <form class="sign-up-form form-control" action="home" method="POST">
         <h2>Sign In</h2>

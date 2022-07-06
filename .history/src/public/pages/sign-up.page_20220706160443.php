@@ -1,19 +1,14 @@
 <!-- this is the page for when new users want to create a account for TheLibrary -->
 
+<!-- this is the page for when user whats to sign in to his/her library account -->
+
 <main>
     <form class="sign-up-form form-control" action="home" method="POST">
         <h2>Sign In</h2>
-        <label for="exampleFormControlInput" class="form-label">
-            Email:
-        </label>
-        <input type="email" class="form-control" id="exampleFormControlInput" name="email" placeholder="example@example.com">
-        <div class="invalid-feedback">
-            Please fill in your email address
-        </div>
         <label for="exampleFormControlInput1" class="form-label">
             Username:
         </label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="username">
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="username">
         <div class="invalid-feedback">
             Please fill in your username
         </div>
