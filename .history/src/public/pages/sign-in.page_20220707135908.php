@@ -45,7 +45,7 @@
         }
 
 
-        $sql = "SELECT username, user_password, user_type FROM user_info WHERE username = $username";
+        $sql = "SELECT username, user_password, user_type FROM users WHERE username = $username";
 
         echo $sql;
         

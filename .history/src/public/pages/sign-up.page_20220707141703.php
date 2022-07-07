@@ -2,7 +2,7 @@
 
 <?php
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-
+    
     session_start();
 
     $conn = connect();
@@ -13,7 +13,104 @@
     //error handling
     $username_error = $password_error = $age_error = $userType_error = "";
 
-    if($_SERVER["REQUEST_METHOD"]== "POST"){
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // Validate username
+        if (empty(trim($_POST["username"]))) {
+            $username_error = "Please enter a username.";
+        } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
+            $username_error = "Username can only contain letters, numbers, and underscores.";
+        } else {
+            // Prepare a select statement
+            $sql = "SELECT user_id FROM user_info WHERE username = ?";
+    
+            if ($stmt = mysqli_prepare($conn, $sql)) {
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_username);
+    
+                // Set parameters
+                $param_username = trim($_POST["username"]);
+    
+                // Attempt to execute the prepared statement
+                if (mysqli_stmt_execute($stmt)) {
+                    /* store result */
+                    mysqli_stmt_store_result($stmt);
+    
+                    if (mysqli_stmt_num_rows($stmt) == 1) {
+                        $username_error = "This username is already taken.";
+                    } else {
+                        $username = trim($_POST["username"]);
+                    }
+                } else {
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+    
+                // Close statement
+                mysqli_stmt_close($stmt);
+            }
+        }
+    
+        // Validate password
+        if (empty(trim($_POST["password"]))) {
+            $password_error = "Please enter a password.";
+        } elseif (strlen(trim($_POST["password"])) < 6) {
+            $password_error = "Password must have atleast 6 characters.";
+        } else {
+            $password = trim($_POST["password"]);
+        }
+    
+        //age
+        if (empty(trim($_POST["age"]))) {
+            $age_error = "Please enter your age.";
+        } elseif (strlen(trim($_POST["password"])) < 6) {
+            $age_error = "you must be at least 6 years old.";
+        } else {
+            $age = trim($_POST["age"]);
+        }
+
+        //user type
+        if ($_POST["userType"] === "librarian") {
+            $userType = "librarian";
+            $username_error = "";
+        }else{
+            $userType = "member";
+            $username_error = "";
+        }
+    
+        // Check input errors before inserting in database
+        if (empty($username_error) && empty($password_error) && empty($age_error) && empty($userType_error)) {
+    
+            // Prepare an insert statement
+            $sql = "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES (?, ?, ?, ?)";
+    
+            if ($stmt = mysqli_prepare($conn, $sql)) {
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "ssss", $param_username, $param_age, $param_password, $param_userType);
+    
+                // Set parameters
+                $param_username = $username;
+                $param_age = $age;
+                $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+                $param_userType = $userType;
+    
+                // Attempt to execute the prepared statement
+                if (mysqli_stmt_execute($stmt)) {
+                    // Redirect to login page
+                    header("location: home");
+                } else {
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+    
+                // Close statement
+                mysqli_stmt_close($stmt);
+            }
+        }
+    
+        // Close connection
+        mysqli_close($conn);
+    }
+
+    /* if($_SERVER["REQUEST_METHOD"]== "POST"){
         //username
         if (empty(trim($_POST["username"]))) {
             $username_error = "Please enter a username.";
@@ -78,7 +175,7 @@
         $conn->close();
           
     
-    } 
+    } */
 
 
 ?>

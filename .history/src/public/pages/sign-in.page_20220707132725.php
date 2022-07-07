@@ -5,8 +5,6 @@
  
     $conn = connect();
 
-    $username = $password = "";
-
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         //username
         if (empty(trim($_POST["username"]))) {
@@ -34,21 +32,6 @@
             $password_error = "";
         }
 
-        //user type
-
-        if ($_POST["userType"] === "librarian") {
-            $userType = "librarian";
-            $username_error = "";
-        }else{
-            $userType = "member";
-            $username_error = "";
-        }
-
-
-        $sql = "SELECT username, user_password, user_type FROM user_info WHERE username = $username";
-
-        echo $sql;
-        
 
     }
 

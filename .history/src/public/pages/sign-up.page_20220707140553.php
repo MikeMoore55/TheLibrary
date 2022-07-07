@@ -2,7 +2,6 @@
 
 <?php
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-
     session_start();
 
     $conn = connect();
@@ -78,7 +77,7 @@
         $conn->close();
           
     
-    } 
+    }
 
 
 ?>
