@@ -56,8 +56,8 @@
             $password = "";
         } else {
             $password = trim($_POST["password"]);
-/*             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
- */            $password_error = "";
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $password_error = "";
         }
 
         //user type
@@ -72,7 +72,7 @@
         }
 
        // insert the input values to database
-        $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
+        $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$hashedPassword', '$userType')";
         
         // if successful, take to home page
         if ($conn->multi_query($sql) === TRUE) {

@@ -55,7 +55,7 @@
         if (password_verify($passwordInput, $user_verifiedPassword)) {
             echo "verified";
         }else{
-            echo "password error";
+            echo "password error"
         }
         
     }

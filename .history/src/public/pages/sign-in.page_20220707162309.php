@@ -52,10 +52,8 @@
             echo "error no match";
         }
 
-        if (password_verify($passwordInput, $user_verifiedPassword)) {
+        if (password_verify($passwordInput, $user_verifiedPassword) === true) {
             echo "verified";
-        }else{
-            echo "password error";
         }
         
     }

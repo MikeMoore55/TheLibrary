@@ -11,53 +11,42 @@
         //username
         if (empty(trim($_POST["username"]))) {
             $username_error = "Please enter a username.";
-            $usernameInput = "";
+            $username = "";
         } 
         elseif (!preg_match('/^[a-zA-Z0-9_]+$/',($_POST["username"]))) {
             $username_error = "Username can only contain letters, numbers, and underscores.";
-            $usernameInput = "";
+            $username = "";
         } else {
             $username_error = "";
-            $usernameInput = $_POST["username"];   
+            $username = $_POST["username"];   
         }
 
         //password
 
         if (empty(trim($_POST["password"]))) {
             $password_error = "Please enter a password.";
-            $passwordInput = "";
+            $password = "";
         } elseif (strlen(trim($_POST["password"])) <= 6) {
             $password_error = "Password must have at least 6 characters.";
-            $passwordInput = "";
+            $password = "";
         } else {
-            $passwordInput = trim($_POST["password"]);
+            $password = trim($_POST["password"]);
             $password_error = "";
         }
 
-        $sql = "SELECT * FROM user_info WHERE username = '$usernameInput'";
+        $sql = "SELECT * FROM user_info WHERE username = $username";
 
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo 'id = '.$row["user_id"].' name= '.$row["username"].' age= '.$row["user_age"].' password= '.$row["user_password"].' user type= '.$row["user_type"].'';
-        
-            $user_verifiedName = $row["username"];
-            $user_verifiedPassword = password_hash($row["user_password"], PASSWORD_DEFAULT);
-
-
-        }
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                print_r($row);
+            }
         } else {
-            echo "error no match";
-        }
-
-        if (password_verify($passwordInput, $user_verifiedPassword)) {
-            echo "verified";
-        }else{
-            echo "password error";
+            echo "0 results";
         }
         
+        $conn -> close();
     }
 
 ?>

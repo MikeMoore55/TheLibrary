@@ -34,29 +34,8 @@
             $password_error = "";
         }
 
-        $sql = "SELECT * FROM user_info WHERE username = '$usernameInput'";
+        $sql = "SELECT username, user_password FROM user_info WHERE username = $usernameInput";
 
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo 'id = '.$row["user_id"].' name= '.$row["username"].' age= '.$row["user_age"].' password= '.$row["user_password"].' user type= '.$row["user_type"].'';
-        
-            $user_verifiedName = $row["username"];
-            $user_verifiedPassword = password_hash($row["user_password"], PASSWORD_DEFAULT);
-
-
-        }
-        } else {
-            echo "error no match";
-        }
-
-        if (password_verify($passwordInput, $user_verifiedPassword)) {
-            echo "verified";
-        }else{
-            echo "password error";
-        }
         
     }
 
