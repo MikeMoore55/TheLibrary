@@ -2,7 +2,6 @@
 
 <?php
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-    session_start();
 
     $conn = connect();
 
@@ -10,35 +9,30 @@
     $username = $password = $age = $userType = "";
 
     //error handling
-    $username_error = $password_error = $age_error = $userType_error = "";
+/*     $username_error = $password_error = $age_error = $userType_error = ""; */
 
     //determine the location
-    $location = "";
+    $location = "signUp";
 
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         //username
         if (empty(trim($_POST["username"]))) {
             $username_error = "Please enter a username.";
-            $username = "";
         } 
-        elseif (!preg_match('/^[a-zA-Z0-9_]+$/',($_POST["username"]))) {
+        elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
             $username_error = "Username can only contain letters, numbers, and underscores.";
-            $username = "";
         } else {
-            $username_error = "";
             $username = $_POST["username"];
-              
+            $username_error = "";    
         }
 
         //age
         if (empty(trim($_POST["age"]))) {
             $age_error = "Please enter a password.";
-            $age = "";
-        } elseif ($_POST["age"] <= 10) {
+        } elseif (trim($_POST["age"]) < 10) {
             $age_error = "You must be at least 10 years old.";
-            $age = "";
         } else {
-            $age = $_POST["age"];
+            $age = trim($_POST["age"]);
             $age_error = "";
         }
 
@@ -46,10 +40,8 @@
        
         if (empty(trim($_POST["password"]))) {
             $password_error = "Please enter a password.";
-            $password = "";
-        } elseif (strlen(trim($_POST["password"])) <= 6) {
-            $password_error = "Password must have at least 6 characters.";
-            $password = "";
+        } elseif (strlen(trim($_POST["password"])) < 6) {
+            $password_error = "Password must have atleast 6 characters.";
         } else {
             $password = trim($_POST["password"]);
             $password_error = "";
@@ -65,20 +57,23 @@
             $username_error = "";
         }
 
-       
-        $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
-        
-        if ($conn->multi_query($sql) === TRUE) {
-           $location = "home";
-           header("location: home") ;
-        } 
-        else {
-           echo "error"; 
-           $location = "signUp";           
+        if($username_error == "" && $age_error == "" && $password_error == "" && $userType_error == ""){
+            $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
+            $location = "home";
+
+            if ($conn->multi_query($sql) === TRUE) {
+                echo "New records created successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            };
+            
+            $conn->close();
+            
+                
+        }else {
+            echo "error, try again";
+            $location = "signUp";
         };
-        
-        $conn->close();
-          
     
     }
 
@@ -86,7 +81,7 @@
 ?>
 
 <main>
-    <form class="sign-up-form form-control"  method="POST">
+    <form class="sign-up-form form-control" action="<?php echo $location ?>" method="POST">
         <h2>Sign Up</h2>
 
         <label for="exampleFormControlInput1" class="form-label">

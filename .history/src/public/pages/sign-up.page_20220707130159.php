@@ -17,7 +17,7 @@
 
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         //username
-        if (empty(trim($_POST["username"]))) {
+        if ($_POST["username"] == "") {
             $username_error = "Please enter a username.";
             $username = "";
         } 
@@ -31,7 +31,7 @@
         }
 
         //age
-        if (empty(trim($_POST["age"]))) {
+        if ($_POST["age"] == "") {
             $age_error = "Please enter a password.";
             $age = "";
         } elseif ($_POST["age"] <= 10) {
@@ -44,7 +44,7 @@
 
         //password
        
-        if (empty(trim($_POST["password"]))) {
+        if ($_POST["password"] == "") {
             $password_error = "Please enter a password.";
             $password = "";
         } elseif (strlen(trim($_POST["password"])) <= 6) {

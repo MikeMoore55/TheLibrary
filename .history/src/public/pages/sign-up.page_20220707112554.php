@@ -2,7 +2,6 @@
 
 <?php
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-    session_start();
 
     $conn = connect();
 
@@ -17,7 +16,7 @@
 
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         //username
-        if (empty(trim($_POST["username"]))) {
+        if ($_POST["username"] == "") {
             $username_error = "Please enter a username.";
             $username = "";
         } 
@@ -31,7 +30,7 @@
         }
 
         //age
-        if (empty(trim($_POST["age"]))) {
+        if ($_POST["age"] == "") {
             $age_error = "Please enter a password.";
             $age = "";
         } elseif ($_POST["age"] <= 10) {
@@ -46,10 +45,8 @@
        
         if (empty(trim($_POST["password"]))) {
             $password_error = "Please enter a password.";
-            $password = "";
         } elseif (strlen(trim($_POST["password"])) <= 6) {
             $password_error = "Password must have at least 6 characters.";
-            $password = "";
         } else {
             $password = trim($_POST["password"]);
             $password_error = "";
@@ -65,20 +62,23 @@
             $username_error = "";
         }
 
-       
-        $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
-        
-        if ($conn->multi_query($sql) === TRUE) {
-           $location = "home";
-           header("location: home") ;
-        } 
-        else {
-           echo "error"; 
-           $location = "signUp";           
+        if($username_error == "" && $age_error == "" && $password_error == "" && $userType_error == ""){
+            $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
+            
+            if ($conn->multi_query($sql) === TRUE) {
+                echo "New records created successfully";
+                $location = "home";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            };
+            
+            $conn->close();
+            
+                
+        }else {
+            echo "error, try again";
+            $location = "signUp";
         };
-        
-        $conn->close();
-          
     
     }
 
@@ -86,7 +86,7 @@
 ?>
 
 <main>
-    <form class="sign-up-form form-control"  method="POST">
+    <form class="sign-up-form form-control" action="<?php echo $location ?>" method="POST">
         <h2>Sign Up</h2>
 
         <label for="exampleFormControlInput1" class="form-label">
