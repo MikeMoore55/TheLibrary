@@ -1,9 +1,7 @@
 <!-- this is the page for when new users want to create a account for TheLibrary -->
 
 <?php
-    include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-
-    $conn = connect();
+    require_once "/MAMP/htdocs/TheLibrary/config/database.config.php";
 
     // Define variables and initialize with empty values
     $username = $password = $age = $userType = "";
@@ -14,7 +12,7 @@
     //determine the location
     $location = "";
 
-    if($_SERVER["REQUEST_METHOD"]== "POST"){
+    if(isset($_POST['signUp'])){
         //username
         if (empty(trim($_POST["username"]))) {
             $username_error = "Please enter a username.";
@@ -22,8 +20,34 @@
         elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
             $username_error = "Username can only contain letters, numbers, and underscores.";
         } else {
-            $username = $_POST["username"];
-            $username_error = "";    
+            // Prepare a select statement
+            $sqlName = "SELECT id FROM users WHERE username = ?";
+    
+            if ($stmt = mysqli_prepare($conn, $sqlName)) {
+                // Bind variables to the prepared statement as parameters
+                mysqli_stmt_bind_param($stmt, "s", $param_username);
+    
+                // Set parameters
+                $param_username = trim($_POST["username"]);
+    
+                // Attempt to execute the prepared statement
+                if (mysqli_stmt_execute($stmt)) {
+                    /* store result */
+                    mysqli_stmt_store_result($stmt);
+    
+                    if (mysqli_stmt_num_rows($stmt) == 1) {
+                        $username_error = "This username is already taken.";
+                    } else {
+                        $username = trim($_POST["username"]);
+                    }
+                } else {
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+    
+                // Close statement
+                mysqli_stmt_close($stmt);
+                $username_error = "";
+            }
         }
 
         //age
@@ -33,7 +57,6 @@
             $age_error = "You must be at least 10 years old.";
         } else {
             $age = trim($_POST["age"]);
-            $age_error = "";
         }
 
         //password
@@ -44,36 +67,17 @@
             $password_error = "Password must have atleast 6 characters.";
         } else {
             $password = trim($_POST["password"]);
-            $password_error = "";
         }
 
         //user type
 
         if ($_POST["userType"] === "librarian") {
             $userType = "librarian";
-            $username_error = "";
         }else{
             $userType = "member";
-            $username_error = "";
         }
 
-        if($username_error == "" && $age_error == "" && $password_error == "" && $userType_error == ""){
-            $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
-            $location = "home";
-
-            if ($conn->multi_query($sql) === TRUE) {
-                echo "New records created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            };
-            
-            $conn->close();
-            
-                
-        }else {
-            echo "error, try again";
-            $location = "signUp";
-        };
+        if($username_error == "" && $age_error == "" && $password_error == "" && $userType_error == "")
     
     }
 
@@ -81,7 +85,7 @@
 ?>
 
 <main>
-    <form class="sign-up-form form-control" action="<?php echo $location ?>" method="POST">
+    <form class="sign-up-form form-control" action="<?php $location ?>" method="POST">
         <h2>Sign Up</h2>
 
         <label for="exampleFormControlInput1" class="form-label">

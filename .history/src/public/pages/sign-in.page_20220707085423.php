@@ -11,16 +11,6 @@
             Please fill in your username
         </div>
         <label for="exampleFormControlInput2" class="form-label">
-            User Type:
-        </label>
-        <div class="invalid-feedback">
-            Please select user type.
-        </div>
-        <select class="form-select" aria-label="Default select example" name="userType">
-            <option>member</option>
-            <option>librarian</option>
-        </select>
-        <label for="exampleFormControlInput2" class="form-label">
             Password:
         </label>
         <div class="invalid-feedback">
