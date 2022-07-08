@@ -18,7 +18,7 @@
     $conn = connect();
 
     $username = $password = "";
-    $username_error = $password_error = $signIn_error = "";
+    $username_error = $password_error = $signIn_error = ""
 
     if($_SERVER["REQUEST_METHOD"]== "POST"){
 
@@ -76,7 +76,7 @@
 
         } 
         else {
-            echo "error...cant find on database";
+            echo "error...username does not match any on our system";
         }
 
         // check is username and password matches
@@ -86,14 +86,10 @@
             // if user librarian, send to "librarian page"
             if ($user_verifiedType === "librarian") {
                 $_SESSION["is_librarian"] == TRUE;
-                header("location: librarian") ; 
-                $_SESSION["error"] = 0;
-
+                header("location: librarian") ;       
             }
             else{
                 header("location: home") ;
-                $_SESSION["error"] = 1;
-                $signIn_error = "this username or password don't match, please try again";
             }
         }
         else{

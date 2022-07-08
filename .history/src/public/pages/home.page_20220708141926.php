@@ -3,12 +3,19 @@
 <?php
     session_start();
     $_SESSION["is-signed-in"];
+    $_SESSION["user_type"];
     
     //ensure user is signed in
-    if ($_SESSION["is-signed-in"] === FALSE) {
+    if ($_SESSION["is-signed-in"] === false) {
         header("location: signIn"); 
     };
+
+    if ($_SESSION["user_type"] === "librarian") {
+        header("location: librarian");
+    }
  
+
+
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
 
     $conn = connect();

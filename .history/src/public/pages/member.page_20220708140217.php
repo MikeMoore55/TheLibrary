@@ -1,0 +1,33 @@
+<!-- this page is for users who are members -->
+
+include "/MAMP/htdocs/TheLibrary/config/database.config.php";
+
+$conn = connect();
+// getting all info of books
+$sql = "SELECT * FROM books";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        while($row = $result->fetch_assoc()) {
+            // display books        
+            $books .= ' <div class="book">
+                            <h3>'.$row["book_name"].'</h3>
+                            <p class="author">by '.$row["book_author"].'</p>
+                            <p class="genre">'.$row["book_genre"].'</p>
+                        </div>';
+        };
+
+    } ;
+
+?>
+
+<main class="home">
+
+<div class="book-display">
+    <?php
+        echo $books;
+    ?>
+</div>
+</main>

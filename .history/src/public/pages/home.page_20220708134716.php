@@ -2,13 +2,12 @@
 
 <?php
     session_start();
-    $_SESSION["is-signed-in"];
-    
+
     //ensure user is signed in
-    if ($_SESSION["is-signed-in"] === FALSE) {
+    if ($_SESSION["is-signed-in"] === false) {
         header("location: signIn"); 
     };
- 
+
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
 
     $conn = connect();
@@ -33,11 +32,9 @@
 ?>
 
 <main class="home">
-
-<div class="book-display">
-    <?php
-        echo $books;
-    ?>
-</div>
+    <div class="book-display">
+        <?php
+            echo $books;
+        ?>
+    </div>
 </main>
-

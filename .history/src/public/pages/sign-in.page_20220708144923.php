@@ -94,6 +94,7 @@
                 header("location: home") ;
                 $_SESSION["error"] = 1;
                 $signIn_error = "this username or password don't match, please try again";
+
             }
         }
         else{

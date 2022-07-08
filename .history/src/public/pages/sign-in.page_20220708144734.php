@@ -86,14 +86,13 @@
             // if user librarian, send to "librarian page"
             if ($user_verifiedType === "librarian") {
                 $_SESSION["is_librarian"] == TRUE;
-                header("location: librarian") ; 
-                $_SESSION["error"] = 0;
-
+                header("location: librarian") ;       
             }
             else{
                 header("location: home") ;
                 $_SESSION["error"] = 1;
-                $signIn_error = "this username or password don't match, please try again";
+                $signIn_error = "this username or password don't match, please try again"
+
             }
         }
         else{

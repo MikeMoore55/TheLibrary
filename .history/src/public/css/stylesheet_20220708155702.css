@@ -315,3 +315,97 @@ body{
         font-size: 1em;
     }
 }
+
+/* -- HOME PAGE -- */
+
+.book-display{
+    position: absolute;
+    top: 10%;
+    width: 90%;
+    left: 5%;
+}
+
+.book{
+    position: relative;
+    margin: 4% 2% 4% 2%;
+    border: #0275d8 2px solid;
+    box-shadow: rgb(155, 154, 154) 2px 4px 5px 3px;
+    text-align: center;
+    background-color: white;
+}
+
+.book h3{
+    font-size: 2em;
+}
+
+.book .author{
+    font-size: 1.2em;
+}
+
+.book .genre{
+    font-size: 1em;
+    text-transform: capitalize;
+}
+
+/* media queries for home page */
+
+@media (min-width: 500px) {
+    .book-display{
+        top: 12%;
+        width: 80%;
+        left: 10%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    
+    .book{
+        margin: 5% 5% 5% 2%;
+        padding: 2% 2% 2% 2%;
+    }
+
+    .book h3{
+        font-size: 2.3em;
+    }
+    
+    .book .author{
+        font-size: 1.5em;
+    }
+    
+    .book .genre{
+        font-size: 1.3em;
+    }
+    
+}
+
+@media (min-width: 1000px) {
+    .book-display{
+        top: 13%;
+        width: 90%;
+        left: 5%;
+        display: grid;
+        grid-template-columns: 33.3333% 33.3333% 33.3333%;
+    }
+    
+    .book{
+        margin: 5% 5% 5% 2%;
+        padding: 2% 2% 2% 2%;
+    }
+
+    .book h3{
+        font-size: 2em;
+    }
+    
+    .book .author{
+        font-size: 1.2em;
+    }
+    
+    .book .genre{
+        font-size: 1em;
+    }
+    
+}
+
+.librarian{
+    position: relative;
+    margin-top: 13%;
+}
