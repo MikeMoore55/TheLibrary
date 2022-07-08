@@ -61,15 +61,20 @@
             echo "error...username does not match any on our system";
         }
 
-        // check is username and password matches
         if ($usernameInput === $user_verifiedName && password_verify($passwordInput, $user_verifiedPassword)) {
             echo "user identified, access granted!";
-            $_SESSION["is-signed-in"] === TRUE;
-            header("location: home") ;
         }
         else{
             echo "error";
         }
+
+        // make sure password matches
+        /* if (password_verify($passwordInput, $user_verifiedPassword)) {
+            echo "verified";
+        }else{
+            echo "password error";
+        } */
+        
     }
 
 ?>

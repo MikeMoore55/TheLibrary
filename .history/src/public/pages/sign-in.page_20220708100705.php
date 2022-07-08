@@ -32,6 +32,7 @@
         }
 
         //password
+
         if (empty(trim($_POST["password"]))) {
             $password_error = "Please enter a password.";
             $passwordInput = "";
@@ -43,33 +44,28 @@
             $password_error = "";
         }
 
-        // get row where username is the username input
         $sql = "SELECT * FROM user_info WHERE username = '$usernameInput'";
 
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
 
-            while($row = $result->fetch_assoc()) {
-                // create variables from db        
+            while($row = $result->fetch_assoc()) {        
                 $user_verifiedName = $row["username"];
                 $user_verifiedPassword = password_hash($row["user_password"], PASSWORD_DEFAULT);
             }
 
         } 
         else {
-            echo "error...username does not match any on our system";
+            echo "error no match";
         }
 
-        // check is username and password matches
-        if ($usernameInput === $user_verifiedName && password_verify($passwordInput, $user_verifiedPassword)) {
-            echo "user identified, access granted!";
-            $_SESSION["is-signed-in"] === TRUE;
-            header("location: home") ;
+        if (password_verify($passwordInput, $user_verifiedPassword)) {
+            echo "verified";
+        }else{
+            echo "password error";
         }
-        else{
-            echo "error";
-        }
+        
     }
 
 ?>

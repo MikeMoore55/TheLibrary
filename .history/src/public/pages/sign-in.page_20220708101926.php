@@ -65,7 +65,7 @@
         if ($usernameInput === $user_verifiedName && password_verify($passwordInput, $user_verifiedPassword)) {
             echo "user identified, access granted!";
             $_SESSION["is-signed-in"] === TRUE;
-            header("location: home") ;
+
         }
         else{
             echo "error";
