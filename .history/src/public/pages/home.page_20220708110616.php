@@ -19,11 +19,9 @@
 
             while($row = $result->fetch_assoc()) {
                 // create variables from db        
-                $books .= ' <div class="book">
-                                <h3>'.$row["book_name"].'</h3>
-                                <p class="author">by '.$row["book_author"].'</p>
-                                <p class="genre">'.$row["book_genre"].'</p>
-                            </div>';
+                $books .= ' <h3>'.$row["book_name"].'</h3>
+                            <p>'.$row["book_author"].'</p>
+                            <p>'.$row["book_genre"].'</p>';
             }
 
         } 
@@ -31,7 +29,7 @@
 ?>
 
 <main class="home">
-    <div class="book-display">
+    <div>
         <?php
             echo $books;
         ?>

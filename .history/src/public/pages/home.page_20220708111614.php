@@ -21,8 +21,8 @@
                 // create variables from db        
                 $books .= ' <div class="book">
                                 <h3>'.$row["book_name"].'</h3>
-                                <p class="author">by '.$row["book_author"].'</p>
-                                <p class="genre">'.$row["book_genre"].'</p>
+                                <p>by '.$row["book_author"].'</p>
+                                <p>'.$row["book_genre"].'</p>
                             </div>';
             }
 

@@ -106,7 +106,7 @@ body{
 
 @media (min-width: 1000px) {
     .footer{
-        height: 8%;
+        height: 7%;
         padding: 0.5% 2% 0.5% 2%;
 
     }
@@ -286,24 +286,24 @@ body{
 
 @media (min-width: 1000px) {
     .sign-up-form{
-        top: 17%;
+        top: 15%;
         width: 70%;
         left: 15%;
         padding: 1% 2% 1% 2%;
     }
     
     .sign-up-form h2{
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
     
     .sign-up-form label{
-        font-size: 1em;
-        margin-top: 2%;
+        font-size: 0.9em;
+        margin-top: 0.5%;
     }
     
     .sign-up-form .btn-override{
         margin-left: 35%;
-        font-size: 1em;
+        font-size: 0.9em;
         width: 30%;
     }
     
@@ -314,4 +314,18 @@ body{
     .sign-up-form input{
         font-size: 1em;
     }
+}
+
+.book-display{
+    position: absolute;
+    top: 13%;
+    width: 90%;
+    left: 5%;
+}
+
+.book{
+    position: relative;
+    margin: 2% 2% 2% 2%;
+    border: #0275d8 2px solid;
+    border-radius: 10px;
 }
