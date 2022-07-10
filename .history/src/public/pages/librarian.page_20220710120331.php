@@ -51,10 +51,4 @@
         ?>
         </div>
     </div>
-
-    <!-- modals for admin controls -->
-
-    <div id="add-modal" class="add-modal">
-        
-    </div>
 </main>
