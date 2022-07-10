@@ -45,10 +45,8 @@
 
     <div class="book-list">
         <h3>Book List</h3>
-        <div class="book-list-display">
         <?php
             echo $books;
         ?>
-        </div>
     </div>
 </main>

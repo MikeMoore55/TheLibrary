@@ -415,6 +415,13 @@ body{
 
 .librarian .admin-buttons{
     position: relative;
+    width: 80%;
+    margin: 1% 10% 1% 10%;
+}
+
+.librarian .admin-buttons .buttons-override{
+    position: relative;
+    width: 100%;
 }
 
 .librarian .book-list{

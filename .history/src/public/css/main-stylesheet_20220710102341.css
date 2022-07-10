@@ -220,7 +220,7 @@ body{
 
 .sign-up-form{
     position: fixed;
-    top: 13%;
+    top: 10%;
     width: 80%;
     background-color: white;
     left: 10%;
@@ -323,7 +323,6 @@ body{
     top: 10%;
     width: 90%;
     left: 5%;
-    padding-bottom: 10%;
 }
 
 .book{
@@ -410,11 +409,11 @@ body{
 
 .librarian{
     position: absolute;
-    top: 12%;
+    top: 23%;
 }
 
 .librarian .admin-buttons{
-    position: relative;
+
 }
 
 .librarian .book-list{

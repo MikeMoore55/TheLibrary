@@ -411,12 +411,64 @@ body{
 .librarian{
     position: absolute;
     top: 12%;
+    width: 100%;
+}
+
+.librarian h3{
+    text-align: center;
+    padding-top: 3%;
+    font-size: 2em;
 }
 
 .librarian .admin-buttons{
     position: relative;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.librarian .admin-buttons .buttons-override{
+    position: relative;
+    width: 100%;
 }
 
 .librarian .book-list{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    border-top: #0275d8 1px solid;
+    padding-bottom: 15%;
+}
+
+@media (min-width: 500px) {
+    .librarian{
+        position: absolute;
+        top: 12%;
+        width: 100%;
+    }
     
+    .librarian h3{
+        text-align: center;
+        padding-top: 3%;
+        font-size: 3em;
+    }
+    
+    .librarian .admin-buttons{
+        position: relative;
+        width: 70%;
+        margin-left: 15%;
+    }
+    
+    .librarian .admin-buttons .buttons-override{
+        position: relative;
+        width: 100%;
+        font-size: 2em;
+    }
+    
+    .librarian .book-list{
+        position: relative;
+        width: 90%;
+        margin-left: 5%;
+        border-top: #0275d8 1px solid;
+        padding-bottom: 15%;
+    }
 }

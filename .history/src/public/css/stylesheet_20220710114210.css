@@ -411,10 +411,20 @@ body{
 .librarian{
     position: absolute;
     top: 12%;
+    width: 100%;
 }
 
 .librarian .admin-buttons{
     position: relative;
+    width: 70%;
+    margin-left: 15%;
+
+    border-bottom: #0275d8 1px solid;
+}
+
+.librarian .admin-buttons .buttons-override{
+    position: relative;
+    width: 100%;
 }
 
 .librarian .book-list{

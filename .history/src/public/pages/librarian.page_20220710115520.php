@@ -25,10 +25,9 @@
 
 ?>
 <main class="librarian">
-
+    <h3>Control Panel</h3>
     <!-- buttons for librarian to alter books $ author database -->
     <div class="admin-buttons">
-        <h3>Control Panel</h3>
         <!-- add books -->
         <form>
             <input type="submit" value="Add a new Book" name="newBook" class="btn btn-primary mb-3 buttons-override">
@@ -42,13 +41,10 @@
             <input type="submit" value="Delete a Book" name="delBook" class="btn btn-primary mb-3 buttons-override">
         </form>
     </div>
-
+    <h3>Book List</h3>
     <div class="book-list">
-        <h3>Book List</h3>
-        <div class="book-list-display">
         <?php
             echo $books;
         ?>
-        </div>
     </div>
 </main>
