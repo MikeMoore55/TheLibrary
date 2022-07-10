@@ -25,26 +25,20 @@
 
 ?>
 <main class="librarian">
-
-    <!-- buttons for librarian to alter books $ author database -->
+    <div class="book-list">
+        
+    </div>
+    
     <div class="admin-buttons">
-        <!-- add books -->
         <form>
             <input type="submit" value="Add a new Book" name="newBook" class="btn btn-primary mb-3">
         </form>
-        <!-- update books -->
         <form>
             <input type="submit" value="Update a Book" name="updateBook" class="btn btn-primary mb-3">
         </form>
-        <!-- delete books -->
         <form>
             <input type="submit" value="Delete a Book" name="delBook" class="btn btn-primary mb-3">
         </form>
     </div>
 
-    <div class="book-list">
-        <?php
-            echo $books;
-        ?>
-    </div>
 </main>
