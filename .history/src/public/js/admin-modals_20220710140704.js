@@ -19,26 +19,14 @@ const closeDelBtn = document.querySelector("#del-close");
 // code
 
 //make modals display none by default
-
+addModal.style.display = none;
+updateModal.style.display = none;
+delModal.style.display = none;
 
 //open modals
 
 function openAdd(){
-    addModal.style.display = "block"; 
-};
-
-function openUpdate(){
-    updateModal.style.display = block; 
-}
-
-function openDel(){
-    delModal.style.display = block; 
-}
-
-// close modals
-
-function closeAdd(){
-    addModal.style.display = "none"; 
+    addModal.style.display = block; 
 };
 
 function openUpdate(){

@@ -37,7 +37,7 @@ function openDel(){
 
 // close modals
 
-function closeAdd(){
+function openAdd(){
     addModal.style.display = "none"; 
 };
 

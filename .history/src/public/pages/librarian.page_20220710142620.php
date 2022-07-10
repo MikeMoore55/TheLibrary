@@ -74,7 +74,7 @@
             <label for="exampleFormControlInput1" class="form-label">
                 year released:
             </label>
-            <input type="text" class="form-control" id="exampleFormControlInput3" name="book_year">
+            <input type="year" class="form-control" id="exampleFormControlInput3" name="book_year">
             <label for="exampleFormControlInput1" class="form-label">
                 genre:
             </label>
@@ -84,9 +84,7 @@
         </form>
 
         <?php
-                $conn = connect();
-
-/*  
+/* 
             $book_name = $book_author = $book_year = $book_genre = "";
             $book_name_error = $book_author_error = $book_year_error = $book_genre_error = ""; */
 
@@ -134,10 +132,11 @@
                 $book_genre = $_POST["book_genre"];
 
 
-                $sql .= "INSERT INTO 'books' (book_name, book_author, book_year, book_genre) VALUES ('$book_name', '$book_author', '$book_year', '$book_genre');";
+                $sql .= "INSERT INTO books (book_name, book_author, book_year, book_genre) VALUES ('$book_name', '$book_author', '$book_year', '$book_genre')";
                     
-                if ($conn->query($sql) === TRUE) {
+                if ($conn->multi_query($sql) === TRUE) {
                     echo "book added successfully";
+                    header("location: librarian") ;
                 }
                 else {
                     echo "error";        

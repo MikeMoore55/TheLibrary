@@ -34,17 +34,3 @@ function openUpdate(){
 function openDel(){
     delModal.style.display = block; 
 }
-
-// close modals
-
-function closeAdd(){
-    addModal.style.display = "none"; 
-};
-
-function openUpdate(){
-    updateModal.style.display = block; 
-}
-
-function openDel(){
-    delModal.style.display = block; 
-}

@@ -62,7 +62,7 @@
 ?>
 
 <form class="add-form" method="POST">
-    <span id="add-close" class="close-btn">X</span>
+    <span id="close" class="close-btn">X</span>
     <h3>New Book</h3>
     <label for="exampleFormControlInput1" class="form-label">
         book name:

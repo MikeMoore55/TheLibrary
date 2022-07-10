@@ -84,9 +84,7 @@
         </form>
 
         <?php
-                $conn = connect();
-
-/*  
+/* 
             $book_name = $book_author = $book_year = $book_genre = "";
             $book_name_error = $book_author_error = $book_year_error = $book_genre_error = ""; */
 

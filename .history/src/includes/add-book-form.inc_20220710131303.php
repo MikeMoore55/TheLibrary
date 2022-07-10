@@ -20,40 +20,31 @@
         }
         //book author
         if (empty(trim($_POST["book_author"]))) {
-            $book_author_error = "please fill in the blank area";
+            $book_name_error = "please fill in the blank area";
             $book_name = "";
         } 
         else{
-            $book_author_error = "";
-            $book_author = $_POST["book_author"];
-        }
-        // book year
-        if (empty(trim($_POST["book_year"]))) {
-            $book_year_error = "please fill in the blank area";
-            $book_year = "";
-        } 
-        else{
-            $book_year_error = "";
-            $book_year = $_POST["book_year"];
-        }
-        //book genre
-        if (empty(trim($_POST["book_genre"]))) {
-            $book_genre_error = "please fill in the blank area";
-            $book_genre = "";
-        } 
-        else{
-            $book_genre_error = "";
-            $book_genre = $_POST["book_name"];
+            $book_name_error = "";
+            $book_name = $_POST["book_name"];
         }
 
-        $sql .= "INSERT INTO books (book_name, book_author, book_year, book_genre) VALUES ('$book_name', '$book_author', '$book_year', '$book_genre')";
+        if (empty(trim($_POST["book_name"]))) {
+            $book_name_error = "please fill in the blank area";
+            $book_name = "";
+        } 
+        else{
+            $book_name_error = "";
+            $book_name = $_POST["book_name"];
+        }
+
+        $sql .= "INSERT INTO books (book_name, book_author, book_year, book_genre) VALUES ('$username', '$age', '$password', '$userType')";
             
         if ($conn->multi_query($sql) === TRUE) {
-            echo "book added successfully";
-            header("location: librarian") ;
+            echo "book added succesfully";
+        header("location: librarian") ;
         }
         else {
-            echo "error";        
+        echo "error";        
         };
         
         //close connection
@@ -62,7 +53,6 @@
 ?>
 
 <form class="add-form" method="POST">
-    <span id="add-close" class="close-btn">X</span>
     <h3>New Book</h3>
     <label for="exampleFormControlInput1" class="form-label">
         book name:
