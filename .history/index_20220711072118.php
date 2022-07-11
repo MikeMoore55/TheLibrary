@@ -51,13 +51,13 @@
                 require __DIR__ . '/src/public/pages/librarian.page.php';
                 break;
             case '/add-book':
-                require __DIR__ . '/src/public/pages/add-book.page.php';
+                require __DIR__ . '/src/public/pages/librarian.page.php';
                 break;
             case '/update-book':
-                require __DIR__ . '/src/public/pages/update-book.page.php';
+                require __DIR__ . '/src/public/pages/librarian.page.php';
                 break;
             case '/del-book':
-                require __DIR__ . '/src/public/pages/del-book.page.php';
+                require __DIR__ . '/src/public/pages/librarian.page.php';
                 break;
 
             default:

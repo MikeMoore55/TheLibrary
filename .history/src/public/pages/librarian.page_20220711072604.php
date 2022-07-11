@@ -32,7 +32,7 @@
         <h3>Control Panel</h3>
         <!-- add books -->
         <form action="add-book" method="POST">
-            <input id="add-btn" type="submit" value="Add a New Book" name="updateBook" class="btn btn-primary mb-3 buttons-override">
+            <input id="update-btn" type="submit" value="Update a Book" name="updateBook" class="btn btn-primary mb-3 buttons-override">
         </form>
         <!-- update books -->
         <form action="update-book" method="POST">
