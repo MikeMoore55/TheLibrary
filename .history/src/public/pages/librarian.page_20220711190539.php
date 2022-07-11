@@ -31,30 +31,6 @@
         };
 
     } ;
-
-
-// search feature (not working)
-    if (isset($_POST["search"])) {
-        $search = $_POST["search-input"];
-
-        $query .= "SELECT * FROM books WHERE 'book_name' like '%$search%' OR 'book_year' like '%$search%' OR 'book_genre' like '%$search%'  OR 'book_author' like '%$search%';"; //search books table by given parameter
-
-        $search_result = $conn->query($query);
-        
-        if ($search_result->num_rows > 0) {
-    
-            while($new_row = $search_result->fetch_assoc()) {
-                $search_books .= ' 
-                            <div class="book">
-                                <h3>'.$new_row["book_name"].'</h3>
-                                <p class="author">by '.$new_row["book_author"].'</p>
-                                <p class="genre">'.$new_row["book_genre"].'</p>
-                            </div>';
-            }; 
-
-        }
-    }
-
     // close connection
     $conn -> close();
 
@@ -81,26 +57,40 @@
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">
         <h3>Book List</h3>
-        <!-- search feature (not working) 
         <div>
             <form method="POST">
-                <input type="text" name="search-input">
-                <input type="submit" value="search">
+                <input type="text" name="search-input" placeholder="search">
+                <input type="submit" name="search-btn" value="search">
             </form>
-        </div> -->
+        </div>
         <div class="book-list-display">
-            <!-- search feature not working
-             <div class="searched">
-                ?php
-                     echo $search_books
-                ?>
-            </div> -->
-            <div class="results">
-                <?php        
-                    echo $books;
-                ?>
-            </div>
+            <?php
+                echo $books;
+            ?>
         </div>
     </div>
 </div>
 </main>
+
+<?php
+    if (isset($_POST["search"])) {
+        $search = $_POST["search-input"];
+
+        $query = "SELECT * from books where book_name like '%$search%' OR release_year like '%$search%' OR book_genre like '%$search%' OR age_group like '%$search%' OR author_id like '%$search%';"; //search books table by given parameter
+
+        $result = $conn->query($query);
+        
+        if ($result->num_rows > 0) {
+    
+            while($new_row = $result->fetch_assoc()) {
+                $searched_books .= ' 
+                            <div class="book">
+                                <h3>'.$new_row["book_name"].'</h3>
+                                <p class="author">by '.$new_row["book_author"].'</p>
+                                <p class="genre">'.$new_row["book_genre"].'</p>
+                            </div>';
+            };
+
+        }
+    }
+?>

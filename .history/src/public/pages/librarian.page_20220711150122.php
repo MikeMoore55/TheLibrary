@@ -8,7 +8,7 @@
 
 -->
 
-<?php
+<?
     session_start();
 
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
@@ -31,38 +31,28 @@
         };
 
     } ;
-
-
-// search feature (not working)
-    if (isset($_POST["search"])) {
-        $search = $_POST["search-input"];
-
-        $query .= "SELECT * FROM books WHERE 'book_name' like '%$search%' OR 'book_year' like '%$search%' OR 'book_genre' like '%$search%'  OR 'book_author' like '%$search%';"; //search books table by given parameter
-
-        $search_result = $conn->query($query);
-        
-        if ($search_result->num_rows > 0) {
-    
-            while($new_row = $search_result->fetch_assoc()) {
-                $search_books .= ' 
-                            <div class="book">
-                                <h3>'.$new_row["book_name"].'</h3>
-                                <p class="author">by '.$new_row["book_author"].'</p>
-                                <p class="genre">'.$new_row["book_genre"].'</p>
-                            </div>';
-            }; 
-
-        }
-    }
-
     // close connection
     $conn -> close();
 
 ?>
 
-<main class="librarian-main">
-<div class="librarian">
-  <!-- buttons for librarian to alter books & author database -->
+<main class="librarian">
+    <div class="input-group search-container-override">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+            <label class="form-label" for="form1">Search</label>
+        </div>
+        <button type="button" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <div>
+        <?php
+            include "/MAMP/htdocs/TheLibrary/includes/librarian-book-search.inc.php";
+        ?>
+    </div> 
+
+    <!-- buttons for librarian to alter books & author database -->
     <div class="admin-buttons">
         <h3>Control Panel</h3>
         <!-- add books -->
@@ -81,26 +71,11 @@
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">
         <h3>Book List</h3>
-        <!-- search feature (not working) 
-        <div>
-            <form method="POST">
-                <input type="text" name="search-input">
-                <input type="submit" value="search">
-            </form>
-        </div> -->
         <div class="book-list-display">
-            <!-- search feature not working
-             <div class="searched">
-                ?php
-                     echo $search_books
-                ?>
-            </div> -->
-            <div class="results">
-                <?php        
-                    echo $books;
-                ?>
-            </div>
+            <?php
+                echo $books;
+            ?>
         </div>
     </div>
-</div>
+
 </main>

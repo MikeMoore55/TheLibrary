@@ -8,7 +8,7 @@
 
 -->
 
-<?php
+<?
     session_start();
 
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
@@ -32,36 +32,53 @@
 
     } ;
 
-
-// search feature (not working)
-    if (isset($_POST["search"])) {
-        $search = $_POST["search-input"];
-
-        $query .= "SELECT * FROM books WHERE 'book_name' like '%$search%' OR 'book_year' like '%$search%' OR 'book_genre' like '%$search%'  OR 'book_author' like '%$search%';"; //search books table by given parameter
-
-        $search_result = $conn->query($query);
+    if($_SERVER["REQUEST_METHOD"]== "POST"){
         
-        if ($search_result->num_rows > 0) {
-    
-            while($new_row = $search_result->fetch_assoc()) {
-                $search_books .= ' 
-                            <div class="book">
-                                <h3>'.$new_row["book_name"].'</h3>
-                                <p class="author">by '.$new_row["book_author"].'</p>
-                                <p class="genre">'.$new_row["book_genre"].'</p>
+        $sql = "SELECT * FROM books";
+        
+        if ($result = $conn->query($sql)) {
+
+            $search = $_POST["search-input"];
+            
+            $query = "SELECT * from books where book_name like '%$search%' OR release_year like '%$search%' OR book_genre like '%$search%' OR age_group like '%$search%'"; //search books table by given parameter
+            
+            $result = mysqli_query($conn,$query); 
+
+            while ($row = $result->fetch_array()) {
+                $books .= ' <div class="book">
+                                <h3>'.$row["book_name"].'</h3>
+                                <p class="author">by '.$row["book_author"].'</p>
+                                <p class="genre">'.$row["book_genre"].'</p>
                             </div>';
-            }; 
+            }
 
+            $result->free();
         }
+    
     }
-
     // close connection
     $conn -> close();
 
 ?>
 
-<main class="librarian-main">
-<div class="librarian">
+<main class="librarian">
+    <div>
+        <form method="POST">
+            <input type="text" name="search-input" placeholder="search">
+            <input type="submit" name="search" value="search">
+        </form>
+    </div>
+
+    <!-- area where all books will be displayed even once edited -->
+    <div class="book-list">
+        <h3>Book List</h3>
+        <div class="book-list-display">
+            <?php
+                echo $books;
+            ?>
+        </div>
+    </div>
+
   <!-- buttons for librarian to alter books & author database -->
     <div class="admin-buttons">
         <h3>Control Panel</h3>
@@ -78,29 +95,4 @@
             <input id="del-btn" type="submit" value="Delete a Book" name="delBook" class="btn btn-primary mb-3 buttons-override">
         </form>
     </div>
-    <!-- area where all books will be displayed even once edited -->
-    <div class="book-list">
-        <h3>Book List</h3>
-        <!-- search feature (not working) 
-        <div>
-            <form method="POST">
-                <input type="text" name="search-input">
-                <input type="submit" value="search">
-            </form>
-        </div> -->
-        <div class="book-list-display">
-            <!-- search feature not working
-             <div class="searched">
-                ?php
-                     echo $search_books
-                ?>
-            </div> -->
-            <div class="results">
-                <?php        
-                    echo $books;
-                ?>
-            </div>
-        </div>
-    </div>
-</div>
 </main>

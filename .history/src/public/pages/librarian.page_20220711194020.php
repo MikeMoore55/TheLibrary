@@ -32,8 +32,6 @@
 
     } ;
 
-
-// search feature (not working)
     if (isset($_POST["search"])) {
         $search = $_POST["search-input"];
 
@@ -81,20 +79,18 @@
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">
         <h3>Book List</h3>
-        <!-- search feature (not working) 
         <div>
             <form method="POST">
                 <input type="text" name="search-input">
                 <input type="submit" value="search">
             </form>
-        </div> -->
+        </div>
         <div class="book-list-display">
-            <!-- search feature not working
-             <div class="searched">
-                ?php
+            <div class="searched">
+                <?php
                      echo $search_books
                 ?>
-            </div> -->
+            </div>
             <div class="results">
                 <?php        
                     echo $books;

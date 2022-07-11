@@ -32,12 +32,10 @@
 
     } ;
 
-
-// search feature (not working)
     if (isset($_POST["search"])) {
         $search = $_POST["search-input"];
 
-        $query .= "SELECT * FROM books WHERE 'book_name' like '%$search%' OR 'book_year' like '%$search%' OR 'book_genre' like '%$search%'  OR 'book_author' like '%$search%';"; //search books table by given parameter
+        $query = "SELECT * FROM books WHERE 'book_name' like '%$search%' OR 'book_year' like '%$search%' OR 'book_genre' like '%$search%'  OR 'book_author' like '%$search%';"; //search books table by given parameter
 
         $search_result = $conn->query($query);
         
@@ -81,20 +79,19 @@
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">
         <h3>Book List</h3>
-        <!-- search feature (not working) 
         <div>
             <form method="POST">
-                <input type="text" name="search-input">
-                <input type="submit" value="search">
+                <input type="text" name="search-input" placeholder="search">
+                <input type="submit" name="search-btn" value="search">
             </form>
-        </div> -->
+        </div>
         <div class="book-list-display">
-            <!-- search feature not working
-             <div class="searched">
-                ?php
-                     echo $search_books
+            <div class="searched">
+                <?php
+                     echo $search;
+                     echo $search_result;
                 ?>
-            </div> -->
+            </div>
             <div class="results">
                 <?php        
                     echo $books;
