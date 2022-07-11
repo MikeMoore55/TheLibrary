@@ -71,7 +71,7 @@
 
 
         // get row where username is = the username input
-        $sql = "SELECT * FROM user_info WHERE username = '$username_input'";
+        $sql = "SELECT * FROM user_info WHERE username = '$username_isnput'";
 
         $result = $conn->query($sql);
 

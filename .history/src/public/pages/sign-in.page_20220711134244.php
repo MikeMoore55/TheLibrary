@@ -71,7 +71,7 @@
 
 
         // get row where username is = the username input
-        $sql = "SELECT * FROM user_info WHERE username = '$username_input'";
+        $sql = "SELECT * FROM user_info WHERE username = '$usernameInput'";
 
         $result = $conn->query($sql);
 
@@ -133,7 +133,7 @@
         <div class="invalid-feedback">
             Please fill in your password.
         </div>
-        <p><a href="restPassword">Forgot Password?</a></p>
+        <p><a href="restPassword">Forgot Password!</a></p>
         <br>
         <input id="sign-in" type="submit" class="btn btn-primary mb-3 btn-override" name="signIn" value="Sign In">
         <p>Don't have an account? <a href="signUp">Create One!</a></p>

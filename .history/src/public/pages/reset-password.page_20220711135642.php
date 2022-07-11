@@ -15,9 +15,6 @@
     //connect to db
     $conn = connect();
     
-    $username_input = $new_password_input = "";
-    $username_error = $password_error = "";
-
     if($_SERVER["REQUEST_METHOD"]== "POST"){
 
         // validate username
@@ -40,53 +37,39 @@
         // validate password
         if (empty(trim($_POST["new_password"]))) {
             $password_error = "Please enter a password.";
-            $new_password_input = "";
+            $password_input = "";
             $_SESSION["error"] = 1;
         } 
         elseif (strlen(trim($_POST["new_password"])) <= 6) {
             $password_error = "Password must have at least 6 characters.";
-            $new_password_input = "";
+            $password_input = "";
             $_SESSION["error"] = 1;
 
         } 
         else {
-            $new_password_input = trim($_POST["new_password"]);
+            $password_input = trim($_POST["new_password"]);
             $password_error = "";
             $_SESSION["error"] = 0;
 
         }
 
         // find user info so we can reset password
-        $sql_1 = "SELECT * FROM user_info WHERE username = '$username_input';";
+        $sql = "SELECT * FROM user_info WHERE username = '$username_input';";
 
-        $result = $conn->query($sql_1);
+        $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
 
             while($row = $result->fetch_assoc()) {
                 // create variables from db        
-                $verified_username = $row["username"];// db username
-                $old_user_password = $row["user_password"];// db old user password
+                $user_verified_name = $row["username"];// db username
+                $user_verified_password = password_hash($row["user_password"], PASSWORD_DEFAULT);// db user password
+                $user_verified_type = $row["user_type"];// db user type
             }
 
         } 
         else {
             echo "error...cant find on database";
-        }
-
-        if ($username_input === $verified_username && $new_password_input !== $old_user_password) {
-            
-            $sql_2 .= "UPDATE user_info SET user_password = '$new_password_input' WHERE username = '$username_input';";
-
-            // if successful, take to home page
-            if ($conn->multi_query($sql_2) === TRUE) {
-                $location = "signIn";
-                header("location: signIn") ;
-            }
-            // if not, stay on current page 
-            else {
-                echo "error";        
-            }
         }
     }
 ?>
@@ -104,7 +87,7 @@
         <label for="password" class="form-label">
             New-Password:
         </label>
-        <input id="password" type="password" class="form-control" placeholder="*****" name="new_password">
+        <input id="password" type="password" class="form-control" placeholder="*****" name="password">
         <div class="invalid-feedback">
             Please fill in your password.
         </div>

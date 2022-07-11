@@ -104,7 +104,7 @@
         <label for="password" class="form-label">
             New-Password:
         </label>
-        <input id="password" type="password" class="form-control" placeholder="*****" name="new_password">
+        <input id="password" type="password" class="form-control" placeholder="*****" name="password">
         <div class="invalid-feedback">
             Please fill in your password.
         </div>

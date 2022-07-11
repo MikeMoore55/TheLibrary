@@ -17,7 +17,7 @@
     
     $username_input = $new_password_input = "";
     $username_error = $password_error = "";
-
+    
     if($_SERVER["REQUEST_METHOD"]== "POST"){
 
         // validate username
@@ -66,7 +66,7 @@
             while($row = $result->fetch_assoc()) {
                 // create variables from db        
                 $verified_username = $row["username"];// db username
-                $old_user_password = $row["user_password"];// db old user password
+                $old_user_password = password_hash($row["user_password"], PASSWORD_DEFAULT);// db old user password
             }
 
         } 
@@ -74,7 +74,7 @@
             echo "error...cant find on database";
         }
 
-        if ($username_input === $verified_username && $new_password_input !== $old_user_password) {
+        if ($username_input === $verified_username && $new_password_input != $old_user_password) {
             
             $sql_2 .= "UPDATE user_info SET user_password = '$new_password_input' WHERE username = '$username_input';";
 
@@ -104,7 +104,7 @@
         <label for="password" class="form-label">
             New-Password:
         </label>
-        <input id="password" type="password" class="form-control" placeholder="*****" name="new_password">
+        <input id="password" type="password" class="form-control" placeholder="*****" name="password">
         <div class="invalid-feedback">
             Please fill in your password.
         </div>

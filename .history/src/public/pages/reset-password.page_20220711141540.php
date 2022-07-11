@@ -74,7 +74,7 @@
             echo "error...cant find on database";
         }
 
-        if ($username_input === $verified_username && $new_password_input !== $old_user_password) {
+        if ($username_input === $verified_username && $new_password_input != $old_user_password) {
             
             $sql_2 .= "UPDATE user_info SET user_password = '$new_password_input' WHERE username = '$username_input';";
 
@@ -104,7 +104,7 @@
         <label for="password" class="form-label">
             New-Password:
         </label>
-        <input id="password" type="password" class="form-control" placeholder="*****" name="new_password">
+        <input id="password" type="password" class="form-control" placeholder="*****" name="password">
         <div class="invalid-feedback">
             Please fill in your password.
         </div>
