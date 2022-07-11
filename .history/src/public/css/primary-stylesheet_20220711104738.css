@@ -360,7 +360,7 @@ body{
     }
     
     .book{
-        margin: 5% 5% 5% 2%;
+        margin: 5% 5% 5% 5%;
         padding: 2% 2% 2% 2%;
     }
 
@@ -411,12 +411,141 @@ body{
 .librarian{
     position: absolute;
     top: 12%;
+    width: 100%;
+}
+
+.librarian h3{
+    text-align: center;
+    padding-top: 3%;
+    font-size: 2em;
 }
 
 .librarian .admin-buttons{
     position: relative;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.librarian .admin-buttons .buttons-override{
+    position: relative;
+    width: 100%;
 }
 
 .librarian .book-list{
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    border-top: #0275d8 1px solid;
+    padding-bottom: 15%;
+}
+
+.librarian .add-modal{
+    position: fixed;
+    width: 70%;
+    left: 15%;
+    z-index: 5;
+    display: none;
+    background-color: rgb(201, 200, 200);
+    border: #0275d8 3px solid;
+    padding: 1% 5% 5% 5%;
+}
+
+.librarian .add-modal .close-btn{
+    position: absolute;
+    right: 3%;
+    color: red;
+    text-align: right;
+    font-size: 2em;
+}
+
+.librarian .update-modal{
+    position: fixed;
+    width: 80%;
+    left: 10%;
+    z-index: 5;
+    display: none;
+    background-color: rgb(201, 200, 200);
+    border: #0275d8 3px solid;
+}
+
+.librarian .del-modal{
+    position: fixed;
+    width: 80%;
+    left: 10%;
+    z-index: 5;
+    display: none;
+    background-color: rgb(201, 200, 200);
+    border: #0275d8 3px solid;
+}
+/* media queries for librarian page */
+
+@media (min-width: 500px) {
+    .librarian{
+        top: 11%;
+    }
     
+    .librarian h3{
+        padding-top: 3%;
+        font-size: 3em;
+    }
+    
+    .librarian .admin-buttons{
+        width: 60%;
+        margin-left: 20%;
+    }
+    
+    .librarian .admin-buttons .buttons-override{
+        width: 100%;
+        font-size: 1.5em;
+    }
+    
+    .librarian .book-list{
+        width: 80%;
+        margin-left: 10%;
+        padding-bottom: 15%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .librarian{
+        top: 14%;
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+    
+    .librarian h3{
+        padding-top: 5%;
+        padding-bottom: 3%;
+        font-size: 1.6em;
+    }
+    
+    .librarian .admin-buttons{
+        margin-top: 8%;
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .librarian .admin-buttons .buttons-override{
+        width: 100%;
+        font-size: 1.2em;
+    }
+    
+    .librarian .book-list{
+        width: 80%;
+        margin-left: 10%;
+        padding-bottom: 15%;
+        padding-left: 2%;
+        border-top: none;
+        border-left: #0275d8 1px solid;
+    }
+
+    .librarian .book-list .book-list-display{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .librarian .book{
+        position: relative;
+        margin: 2% 2% 2% 2%;
+    }
 }

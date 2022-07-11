@@ -126,15 +126,16 @@
         <div class="invalid-feedback">
             <?php echo $userType_error?>
         </div>
-        <label for="password" class="form-label">
+        <label for="exampleFormControlInput2" class="form-label">
             Password:
         </label>
-        <input id="password" type="password" class="form-control" placeholder="*****" name="password">
         <div class="invalid-feedback">
             <?php echo $password_error?>
         </div>
+        <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="*****" name="password">
+
         <br>
-        <input id="sign-up" type="submit" class="btn btn-primary mb-3 btn-override" name="signUp" value="Sign Up">
+        <input type="submit" class="btn btn-primary mb-3 btn-override" name="signUp" value="Sign Up">
         <p>Have an account? <a href="signIn">Sign up!</a></p>
         
     </form>

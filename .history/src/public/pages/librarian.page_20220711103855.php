@@ -35,7 +35,6 @@
     $conn -> close();
 
 ?>
-
 <main class="librarian">
 
     <!-- buttons for librarian to alter books & author database -->

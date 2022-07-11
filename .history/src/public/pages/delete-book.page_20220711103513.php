@@ -23,7 +23,7 @@
         while($row = $result->fetch_assoc()) {
 
             // display book options        
-            $Book_Option .= '<option>'.$row["book_name"].'</option>';
+            $bookOption .= '<option>'.$row["book_name"].'</option>';
         };
 
     } ;
@@ -35,30 +35,28 @@
     <form class="del-form" method="POST">
     <span id="add-close" class="close-btn">X</span>
         <h3>Delete Book</h3>
-        <label for="book-name" class="form-label">
+        <label for="exampleFormControlInput1" class="form-label">
             Which Book Would You Like To Remove:
         </label>
-        <select id="book-name" class="form-select" aria-label="Default select example" name="Book_Selection">
+        <select class="form-select" aria-label="Default select example" name="Book_Selection">
             <?php
-                echo $Book_Option;
+                echo $bookOption;
             ?>
         </select>
         <br>
-        <input id="remove" type="submit" class="btn btn-primary mb-3 btn-override" name="remove" value="Remove">
+        <input type="submit" class="btn btn-primary mb-3 btn-override" name="remove" value="Remove">
 
     </form>
 </main>
 
 <?php
-    $Book_Selection = "";
-
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         // selected book
-        $Book_Selection = $_POST["Book_Selection"];
+        $bookSelection = $_POST["Book_Selection"];
         // connect to db
         $conn = connect();
         // delete sql statement
-        $sql_2 .= "DELETE FROM books WHERE book_name = '$Book_Selection'; ";// sql statement 1
+        $sql_2 .= "DELETE FROM books WHERE book_name = '$bookSelection'; ";// sql statement 1
     
         if ($conn->multi_query($sql_2) === TRUE) {
             header("location: librarian") ;

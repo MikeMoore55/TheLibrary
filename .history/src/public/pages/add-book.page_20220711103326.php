@@ -1,12 +1,5 @@
 <!-- page for librarian to add new book to database -->
 
-<!-- 
-    >>> naming convention <<<
-
-    - name-name === html, js, css
-    - name_name === php, sql
-
--->
 <?php
     session_start();
 

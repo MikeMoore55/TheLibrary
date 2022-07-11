@@ -1,12 +1,5 @@
 <!-- page for librarian to add new book to database -->
 
-<!-- 
-    >>> naming convention <<<
-
-    - name-name === html, js, css
-    - name_name === php, sql
-
--->
 <?php
     session_start();
 
@@ -93,15 +86,15 @@
             author:
         </label>
         <input id="author" type="text" class="form-control" name="book_author">
-        <label for="released-date" class="form-label">
+        <label for="exampleFormControlInput1" class="form-label">
             year released:
         </label>
-        <input id="released-date" type="text" class="form-control"  name="book_year">
-        <label for="genre" class="form-label">
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="book_year">
+        <label for="exampleFormControlInput1" class="form-label">
             genre:
         </label>
-        <input id="genre" type="text" class="form-control"  name="book_genre">
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="book_genre">
         <br>
-        <input id="add" type="submit" class="btn btn-primary mb-3 btn-override" name="add" value="Add">
+        <input type="submit" class="btn btn-primary mb-3 btn-override" name="add" value="Add">
     </form>
 </main>

@@ -58,7 +58,7 @@
         // connect to db
         $conn = connect();
         // delete sql statement
-        $sql_2 .= "DELETE FROM books WHERE book_name = '$Book_Selection'; ";// sql statement 1
+        $sql_2 .= "DELETE FROM books WHERE book_name = '$bookSelection'; ";// sql statement 1
     
         if ($conn->multi_query($sql_2) === TRUE) {
             header("location: librarian") ;

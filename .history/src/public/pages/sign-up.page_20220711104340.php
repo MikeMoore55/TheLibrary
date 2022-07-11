@@ -16,10 +16,10 @@
     $conn = connect();
 
     // Define variables and initialize with empty values
-    $username = $password = $age = $user_type = "";
+    $username = $password = $age = $userType = "";
 
     //error handling
-    $username_error = $password_error = $age_error = $user_type_error = "";
+    $username_error = $password_error = $age_error = $userType_error = "";
 
     if($_SERVER["REQUEST_METHOD"]== "POST"){
 
@@ -71,15 +71,15 @@
 
         //makes member user type default
         if ($_POST["userType"] === "librarian") {
-            $user_type = "librarian";
+            $userType = "librarian";
             $username_error = "";
         }else{
-            $user_type = "member";
+            $userType = "member";
             $username_error = "";
         }
 
        // insert the input values to database
-        $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$user_type')";
+        $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$userType')";
         
         // if successful, take to home page
         if ($conn->multi_query($sql) === TRUE) {
@@ -95,46 +95,48 @@
         $conn->close();
     } 
 
+
 ?>
 
 <main>
     <form class="sign-up-form form-control"  method="POST">
         <h2>Sign Up</h2>
 
-        <label for="username" class="form-label">
+        <label for="exampleFormControlInput1" class="form-label">
             Username:
         </label>
-        <input id="username" type="text" class="form-control" name="username" placeholder="username">
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="username">
         <div class="invalid-feedback">
             <?php echo $username_error?>
         </div>
 
-        <label for="age" class="form-label">
+        <label for="exampleFormControlInput1" class="form-label">
             Age:
         </label>
-        <input id="age" type="age" class="form-control" name="age">
+        <input type="age" class="form-control" id="exampleFormControlInput1" name="age">
         <div class="invalid-feedback">
             <?php echo $age_error?>
         </div>
-        <label for="user-type" class="form-label">
+        <label for="exampleFormControlInput2" class="form-label">
             User Type:
         </label>
-        <select id="user-type" class="form-select" aria-label="Default select example" name="userType">
-            <option>member</option>
-            <option>librarian</option>
-        </select>
         <div class="invalid-feedback">
             <?php echo $userType_error?>
         </div>
-        <label for="password" class="form-label">
+        <select class="form-select" aria-label="Default select example" name="userType">
+            <option>member</option>
+            <option>librarian</option>
+        </select>
+        <label for="exampleFormControlInput2" class="form-label">
             Password:
         </label>
-        <input id="password" type="password" class="form-control" placeholder="*****" name="password">
         <div class="invalid-feedback">
             <?php echo $password_error?>
         </div>
+        <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="*****" name="password">
+
         <br>
-        <input id="sign-up" type="submit" class="btn btn-primary mb-3 btn-override" name="signUp" value="Sign Up">
+        <input type="submit" class="btn btn-primary mb-3 btn-override" name="signUp" value="Sign Up">
         <p>Have an account? <a href="signIn">Sign up!</a></p>
         
     </form>

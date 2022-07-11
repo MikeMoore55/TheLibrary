@@ -42,5 +42,5 @@
         <?php
             echo $books;
         ?>
-    </div>
+</div>
 </main>

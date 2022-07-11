@@ -35,7 +35,6 @@
     $conn -> close();
 
 ?>
-
 <main class="librarian">
 
     <!-- buttons for librarian to alter books & author database -->
@@ -58,9 +57,9 @@
     <div class="book-list">
         <h3>Book List</h3>
         <div class="book-list-display">
-            <?php
-                echo $books;
-            ?>
+        <?php
+            echo $books;
+        ?>
         </div>
     </div>
 
