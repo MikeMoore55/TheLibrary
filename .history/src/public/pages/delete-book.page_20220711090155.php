@@ -55,7 +55,7 @@
         else{
             echo '<script>alert("Error, could not remove book, please try again")</script>';
         }
-        // close connection
+        
         $conn->close();
 
     };

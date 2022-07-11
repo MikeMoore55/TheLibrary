@@ -1,7 +1,7 @@
 <!-- this is the page for when user whats to sign in to his/her library account -->
 <?php
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-    
+
     session_start();
 
     /* -- session variables -- */
@@ -15,7 +15,6 @@
     // error counter
     $_SESSION["error"] = 0;
 
-    // connect to db
     $conn = connect();
 
     $username = $password = "";

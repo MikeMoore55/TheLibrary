@@ -4,7 +4,7 @@
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
 
     $conn = connect();
-    // getting all info of books
+    // getting all info of books, this will also update when librarian adds new books
     $sql = "SELECT * FROM books";
 
     $result = $conn->query($sql);
@@ -28,10 +28,10 @@
 ?>
 
 <main class="home">
-    <!-- area where all books will be displayed even once edited -->
-    <div class="book-display">
-        <?php
-            echo $books;
-        ?>
+
+<div class="book-display">
+    <?php
+        echo $books;
+    ?>
 </div>
 </main>

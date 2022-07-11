@@ -28,10 +28,10 @@
 ?>
 
 <main class="home">
-    <!-- area where all books will be displayed even once edited -->
-    <div class="book-display">
-        <?php
-            echo $books;
-        ?>
+<!-- area where all books will be displayed even once edited -->
+<div class="book-display">
+    <?php
+        echo $books;
+    ?>
 </div>
 </main>

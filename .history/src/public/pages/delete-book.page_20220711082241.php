@@ -1,14 +1,15 @@
 <!-- page for librarian to delete books from database -->
 <?php
+// DELETE FROM name WHERE condition [SQL]
 
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-    // connect to db
+
     $conn = connect();
     // getting all info of books
-    $sql_1 = "SELECT * FROM books;"; // sql statement 1
+    $sql_1 = "SELECT * FROM books";
 
     $result = $conn->query($sql_1);
-    // display all books
+
     if ($result->num_rows > 0) {
 
         while($row = $result->fetch_assoc()) {
@@ -22,7 +23,6 @@
 ?>
 
 <main class="del-book">
-    <!-- delete book form -->
     <form class="del-form" method="POST">
     <span id="add-close" class="close-btn">X</span>
         <h3>Delete Book</h3>
@@ -42,20 +42,21 @@
 
 <?php
     if($_SERVER["REQUEST_METHOD"]== "POST"){
-        // selected book
+
         $bookSelection = $_POST["Book_Selection"];
-        // connect to db
+
         $conn = connect();
-        // delete sql statement
-        $sql_2 .= "DELETE FROM books WHERE book_name = '$bookSelection'; ";// sql statement 1
+
+        $sql_2 .= "DELETE FROM books WHERE book_name = '$bookSelection'; ";
     
         if ($conn->multi_query($sql_2) === TRUE) {
+            echo "book removed successfully";
             header("location: librarian") ;
         }
         else{
-            echo '<script>alert("Error, could not remove book, please try again")</script>';
+            echo "error";
         }
-        // close connection
+        
         $conn->close();
 
     };

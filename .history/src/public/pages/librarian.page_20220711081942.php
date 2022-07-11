@@ -3,13 +3,14 @@
     session_start();
 
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
-    // connect to db
+/*     include "/MAMP/htdocs/TheLibrary/src/public/js/admin-modals.js";
+ */
     $conn = connect();
     // getting all info of books
     $sql = "SELECT * FROM books";
 
     $result = $conn->query($sql);
-    
+
     if ($result->num_rows > 0) {
 
         while($row = $result->fetch_assoc()) {
@@ -22,13 +23,11 @@
         };
 
     } ;
-    // close connection
-    $conn -> close();
 
 ?>
 <main class="librarian">
 
-    <!-- buttons for librarian to alter books & author database -->
+    <!-- buttons for librarian to alter books $ author database -->
     <div class="admin-buttons">
         <h3>Control Panel</h3>
         <!-- add books -->
@@ -44,7 +43,7 @@
             <input id="del-btn" type="submit" value="Delete a Book" name="delBook" class="btn btn-primary mb-3 buttons-override">
         </form>
     </div>
-    <!-- area where all books will be displayed even once edited -->
+
     <div class="book-list">
         <h3>Book List</h3>
         <div class="book-list-display">
