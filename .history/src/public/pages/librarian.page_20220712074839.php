@@ -18,7 +18,7 @@
     
     if (isset($_POST["sort-by"])) {
         $sort = $_POST['order'];
-        $sql = "SELECT * FROM books ORDER BY $sort ASC"; // If you Sort it with value of your  select options
+        $sql = "SELECT * FROM books ORDER BY '$sort' ASC"; // If you Sort it with value of your  select options
     } 
     else {
         $sql = "SELECT * FROM books ORDER BY book_name ASC"; // Else if you do not pass any value from select option will return this

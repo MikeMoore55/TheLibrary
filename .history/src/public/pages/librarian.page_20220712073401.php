@@ -15,12 +15,10 @@
     // connect to db
     $conn = connect();
 
-    
-    if (isset($_POST["sort-by"])) {
-        $sort = $_POST['order'];
+    $sort = @$_POST['order'];
+    if (!empty($sort)) {
         $sql = "SELECT * FROM books ORDER BY $sort ASC"; // If you Sort it with value of your  select options
-    } 
-    else {
+    } else {
         $sql = "SELECT * FROM books ORDER BY book_name ASC"; // Else if you do not pass any value from select option will return this
     };
 
@@ -66,13 +64,12 @@
     <div class="book-list">
         <h3>Book List</h3>
         <div class="sort-feature">
-            <form method="POST" class="sort-form">
+            <form method="POST">
                 <select class="form-control" name="order" title="Sort By">
-                    <option value="book_name">book_name</option>
-                    <option value="book_author">book_author</option>
-                    <option value="book_genre">book_genre</option>
+                    <option value="book_name" title="Title">Title</option>
+                    <option value="author_id" title="Author">Author</option>
+                    <option value="book_genre" title="Genre">Genre</option>
                 </select>
-                <input type="submit" name="sort-by" value="sort">
             </form>
         </div>
         <div class="book-list-display">
