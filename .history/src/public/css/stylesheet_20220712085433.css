@@ -655,11 +655,11 @@ body{
         margin-bottom: 5%;
     }
   
-    .librarian .book-list h3{
+    .librarian  .book-list h3{
         position: relative;
         padding-bottom: 0%;
         font-size: 1.6em;
-        margin-top: 10%;
+        margin-top: 15%;
     }
 
     .librarian .book-list .sort-feature{

@@ -31,7 +31,7 @@
         while($row = $result->fetch_assoc()) {
             // display books        
             $books .= ' <div class="book">
-                            <h4>'.$row["book_name"].'</h4>
+                            <h3>'.$row["book_name"].'</h3>
                             <p class="author">by '.$row["book_author"].'</p>
                             <p class="genre">'.$row["book_genre"].'</p>
                         </div>';
@@ -74,7 +74,6 @@
                 <input type="submit" name="sort-by" value="sort" class="btn btn-primary btn-override">
             </form>
         </div>
-
         <h3>Book List</h3>
         
         <div class="book-list-display">

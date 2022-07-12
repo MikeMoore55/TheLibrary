@@ -106,7 +106,7 @@ body{
 
 @media (min-width: 1000px) {
     .footer{
-        height: 5%;
+        height: 7%;
         padding: 0.5% 2% 0.5% 2%;
 
     }
@@ -514,7 +514,6 @@ body{
     position: relative;
     width: 90%;
     margin-left: 5%; 
-    margin-top: 4%;
 }
 
 .librarian .book-list .sort-feature .sort-form{
@@ -522,12 +521,12 @@ body{
 }
 
 .librarian .book-list .sort-feature .sort-form select{
-    font-size: 1.2em;
+    font-size: 1.2;
 }
 
 .librarian .book-list .sort-feature .sort-form input{
     margin-left: 2%;
-    font-size: 1.1em;
+    font-size: 1.1;
 }
 
 .librarian .add-modal{
@@ -595,36 +594,22 @@ body{
         margin-left: 10%;
         padding-bottom: 15%;
     }
-
-    .librarian .book-list .sort-feature{
-        position: relative;
-        width: 90%;
-        margin-left: 5%; 
-    }
-    
-    .librarian .book-list .sort-feature .sort-form{
-        display: flex;
-    }
-    
-    .librarian .book-list .sort-feature .sort-form select{
-        font-size: 1.7em;
-    }
-    
-    .librarian .book-list .sort-feature .sort-form input{
-        margin-left: 2%;
-        font-size: 1.5em;
-    }
 }
 
 @media (min-width: 1000px) {
     .librarian{
-        top: 12%;
+        top: 14%;
         display: grid;
         grid-template-columns: 30% 70%;
     }
     
+    .librarian h3{
+        padding-top: 5%;
+        padding-bottom: 0%;
+        font-size: 1.6em;
+    }
+    
     .librarian .admin-buttons{
-        position: relative;
         margin-top: 8%;
         width: 80%;
         margin-left: 10%;
@@ -636,58 +621,17 @@ body{
     }
     
     .librarian .book-list{
-        position: relative;
         width: 80%;
         margin-left: 10%;
-        padding-bottom: 5%;
+        padding-bottom: 15%;
         padding-left: 2%;
-        padding-top: 5%;
-        margin-top: 0%;
         border-top: none;
         border-left: #0275d8 1px solid;
     }
 
-    .librarian h3{
+    .librarian .book-list-display .results{
         position: relative;
-        padding-bottom: 0%;
-        font-size: 1.6em;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-  
-    .librarian .book-list h3{
-        position: relative;
-        padding-bottom: 0%;
-        font-size: 1.6em;
         margin-top: 10%;
-    }
-
-    .librarian .book-list .sort-feature{
-        position: absolute;
-        top: 2%;
-    }
-    
-    .librarian .book-list .sort-feature .sort-form{
-        display: flex;
-    }
-    
-    .librarian .book-list .sort-feature .sort-form select{
-        font-size: 1.2em;
-    }
-    
-    .librarian .book-list .sort-feature .sort-form input{
-        margin-left: 2%;
-        font-size: 1.1em;
-    }
-    
-    .librarian .book-list .book-list-display{
-        position: relative;
-        margin-top: 2%;
-    }
-
-    .librarian .book-list .book-list-display .results{
-        position: relative;
-        margin-top: 1%;
         display: grid;
         grid-template-columns: 50% 50%;
         background-color: transparent;
@@ -698,4 +642,7 @@ body{
         margin: 2% 2% 2% 2%;
     }
 
+    .sort-form{
+        display: flex;
+    }
 }

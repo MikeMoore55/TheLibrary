@@ -31,7 +31,7 @@
         while($row = $result->fetch_assoc()) {
             // display books        
             $books .= ' <div class="book">
-                            <h4>'.$row["book_name"].'</h4>
+                            <h3>'.$row["book_name"].'</h3>
                             <p class="author">by '.$row["book_author"].'</p>
                             <p class="genre">'.$row["book_genre"].'</p>
                         </div>';
@@ -64,6 +64,10 @@
     </div>
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">
+        
+
+        <h3>Book List</h3>
+        
         <div class="sort-feature">
             <form method="POST" class="sort-form">
                 <select class="form-control" name="order" title="Sort By">
@@ -74,8 +78,8 @@
                 <input type="submit" name="sort-by" value="sort" class="btn btn-primary btn-override">
             </form>
         </div>
-
-        <h3>Book List</h3>
+        <br>
+        <br>
         
         <div class="book-list-display">
             <div class="results">
