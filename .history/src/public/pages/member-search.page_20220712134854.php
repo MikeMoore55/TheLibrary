@@ -32,8 +32,16 @@
 ?>
 
 <main>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <form method="post" class="search-form">
-        <input type="text" name="search" class="book-search" placeholder="search for an author">
+        <input type="text" name="search" >
         <input type="submit" name="search-for" value="search" class="btn btn-primary mb-3 buttons-override">
     </form>
 
@@ -41,6 +49,5 @@
         <?php
             echo $books;
         ?>
-        <p><a href="member"> << back</a></p>
     </div>
 </main>

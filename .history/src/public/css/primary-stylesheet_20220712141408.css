@@ -413,7 +413,7 @@ body{
     }
     
     .home .sort-feature .sort-form input{
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
 
     .home .sort-feature .sort-form .link{
@@ -437,7 +437,7 @@ body{
         top: 19%;
     }
     .book-display{
-        top: 25%;
+        top: 22%;
         width: 90%;
         left: 5%;
         display: grid;
@@ -472,7 +472,7 @@ body{
     }
     
     .home .sort-feature .sort-form input{
-        font-size: 1.2em;
+        font-size: 1.4em;
     }
 
     .home .sort-feature .sort-form .link{

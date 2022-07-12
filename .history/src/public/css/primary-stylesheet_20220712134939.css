@@ -320,7 +320,7 @@ body{
 
 .book-display{
     position: absolute;
-    top: 19%;
+    top: 17%;
     width: 90%;
     left: 5%;
     padding-bottom: 10%;
@@ -359,12 +359,8 @@ body{
 }
 
 .home .sort-feature .sort-form input{
-    font-size: 1em;
-}
- 
-.home .sort-feature .sort-form .link{
     font-size: 1.2em;
-}    
+}
 
 .home .sort-feature .sort-form select{
     font-size: 1.3em;
@@ -413,12 +409,8 @@ body{
     }
     
     .home .sort-feature .sort-form input{
-        font-size: 1.4em;
-    }
-
-    .home .sort-feature .sort-form .link{
         font-size: 1.6em;
-    }    
+    }
 
     .home .sort-feature .sort-form select{
         font-size: 1.7em;
@@ -437,7 +429,7 @@ body{
         top: 19%;
     }
     .book-display{
-        top: 25%;
+        top: 22%;
         width: 90%;
         left: 5%;
         display: grid;
@@ -472,12 +464,8 @@ body{
     }
     
     .home .sort-feature .sort-form input{
-        font-size: 1.2em;
-    }
-
-    .home .sort-feature .sort-form .link{
         font-size: 1.4em;
-    }    
+    }
 
     .home .sort-feature .sort-form select{
         font-size: 1.3em;
@@ -1112,98 +1100,8 @@ body{
 /* -- SEARCH PAGES -- */
 
 .search-form{
-    position: relative;
+    position: fixed;
     width: 80%;
-    margin-left: 10%;
-    margin-top: 20%;
-    display: flex;
-}
-
-.search-form .book-search{
-    position: relative;
-    padding: none;
-}
-
-.search-form .buttons-override{
-    position: relative;
-    margin-left: 2%;
-    font-size: 1.2em;
-    padding: 3% 5% 3% 5%;
-}
-
-.search-books{
-    position: relative;
-    width: 80%;
-    margin-left: 10%;
-    padding-bottom: 13%;
-}
-
-/* media queries for search */
-
-@media (min-width: 500px) {
-    .search-form{
-        position: relative;
-        width: 70%;
-        margin-left: 15%;
-        margin-top: 25%;
-        display: flex;
-    }
-    
-    .search-form .book-search{
-        position: relative;
-        padding: none;
-        width: 80%;
-    }
-    
-    .search-form .buttons-override{
-        position: relative;
-        margin-left: 2%;
-        font-size: 1.5em;
-        padding: 3% 5% 3% 5%;
-    }
-    
-    .search-books{
-        position: relative;
-        width: 80%;
-        margin-left: 10%;
-        padding-bottom: 13%;
-    }
-
-    .search-books p{
-        font-size: 1.4em;
-    }
-}
-
-@media (min-width: 1000px) {
-    .search-form{
-        position: relative;
-        width: 60%;
-        margin-left: 20%;
-        margin-top: 10%;
-        display: flex;
-    }
-    
-    .search-form .book-search{
-        position: relative;
-        padding: none;
-        width: 70%;
-    }
-    
-    .search-form .buttons-override{
-        position: relative;
-        margin-left: 2%;
-        font-size: 1.1em;
-        padding: 3% 5% 3% 5%;
-    }
-    
-    .search-books{
-        position: relative;
-        width: 60%;
-        margin-left: 20%;
-        padding-bottom: 13%;
-    }
-
-    .search-books p{
-        font-size: 1.1em;
-    }
+    left: 5%;
+    top: 10%;
 }

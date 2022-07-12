@@ -53,8 +53,8 @@
                 <option value="book_author">book_author</option>
                 <option value="book_genre">book_genre</option>
             </select>
-            <input type="submit" name="sort-by" value="Sort Books" class="btn btn-primary btn-override" >
-            <button class="link btn btn-primary btn-override"><a style="color: white; text-decoration: none;" href="search-member">Search</a></button>
+            <input type="submit" name="sort-by" value="sort" class="btn btn-primary btn-override" >
+            <p class="btn btn-primary mb-3 buttons-override"><a style="color: white; text-decoration: none;" href="search-member">Search</a></p>
         </form>
     </div>
     <div class="book-display">
