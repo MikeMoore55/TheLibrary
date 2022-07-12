@@ -26,8 +26,7 @@
     
     if($_SERVER["REQUEST_METHOD"]== "POST"){
 
-        $selected_book = $_POST["selected-book"];
-
+        $selected_book = $_POST["selected-book"]
         // -- initiate variables first -- //
 
         // initiate book name
@@ -70,15 +69,6 @@
             $book_genre = trim($_POST["book_genre"]);
         }
 
-        $sql_2 = "UPDATE `books` SET `book_name` = '$book_name', `book_year` = '$book_year', `book_genre` = '$book_genre'  WHERE `books`.`book_name` = '$selected_book'";
-
-          // when successful, user will be taken back to librarian page, and new book will be added to list
-          if ($conn->multi_query($sql_2) === TRUE) {
-            header("location: librarian") ;
-        }
-        else {
-            /* echo '<script>alert("Error, could not update book, please try again")</script>'; */
-        };
     }
 
     // close connection
@@ -91,7 +81,7 @@
         <span id="update-close" class="close-btn">X</span>
         <h3>Update Book</h3>
         <label for="book-option" class="form-label">
-            Select the book you wish to edit/update:
+            Select the book you wish to edit/update::
         </label>
         <select id="book-option" class="form-control" name="selected-book">
             <?php
