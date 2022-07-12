@@ -63,13 +63,6 @@
             case '/restPassword':
                 require __DIR__ . '/src/public/pages/reset-password.page.php';
                 break;
-            case '/search-librarian':
-                require __DIR__ . '/src/public/pages/librarian-search.page.php';
-                break;
-            case '/search-member':
-                require __DIR__ . '/src/public/pages/member-search.page.php';
-                break;
-                
             default:
                 http_response_code(404);
                 echo "page not found";

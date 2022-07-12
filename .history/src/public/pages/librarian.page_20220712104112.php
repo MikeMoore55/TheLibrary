@@ -56,7 +56,6 @@
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="update">Update a Book</a></p>
         <!-- delete books -->
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del">Delete a Book</a></p>
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="search-librarian">Search for a Book</a></p>
     </div>
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">

@@ -54,7 +54,7 @@
                 <option value="book_genre">book_genre</option>
             </select>
             <input type="submit" name="sort-by" value="sort" class="btn btn-primary btn-override" >
-            <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="search-member">Search</a></p>
+            <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="search-librarian">Search</a></p>
         </form>
     </div>
     <div class="book-display">

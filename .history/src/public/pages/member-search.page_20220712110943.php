@@ -21,7 +21,7 @@
                 // display books        
                 $books .= ' <div class="book">
                                 <h4>'.$row["book_name"].'</h4>
-                                <p class="author">by '.$row["author_name"].'</p>
+                                <p class="author">by '.$row["book_author"].'</p>
                                 <p class="genre">'.$row["book_genre"].'</p>
                             </div>';
             };

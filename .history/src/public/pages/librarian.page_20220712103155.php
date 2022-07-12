@@ -19,10 +19,15 @@
     if (isset($_POST["sort-by"])) {
         $sort = $_POST['order'];
 
-        $sql .= "SELECT * FROM books ORDER BY $sort ASC"; // If you Sort it with value of the sort options
+        $sql = "SELECT * FROM books ORDER BY $sort ASC"; // If you Sort it with value of the sort options
     } 
+    else if (isset($_POST["search-for"])){
+        $search = $_POST['search'];
+        
+        $sql =  "SELECT * FROM books WHERE book_name like %$search% OR book_year like %$search% OR book_genre like %$search% OR author_name like '%$search%';";
+    }
     else{
-        $sql .= "SELECT * FROM books ORDER BY book_name ASC"; // Else if you do not pass any value from select option will return this
+        $sql = "SELECT * FROM books ORDER BY book_name ASC"; // Else if you do not pass any value from select option will return this
     };
 
     $result = $conn->query($sql);
@@ -56,7 +61,6 @@
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="update">Update a Book</a></p>
         <!-- delete books -->
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del">Delete a Book</a></p>
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="search-librarian">Search for a Book</a></p>
     </div>
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">
@@ -76,6 +80,12 @@
         <h3>Book List</h3>
         
         <div class="book-list-display">
+            <div class="search-feature">
+                <form method="POST" class="search-form">
+                    <input type="text" name="search">
+                    <input type="submit" name="search-for" value="search" class="btn btn-primary btn-override">
+                </form>
+            </div>
             <div class="results">
                 <?php        
                     echo $books;

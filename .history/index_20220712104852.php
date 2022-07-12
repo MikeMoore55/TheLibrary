@@ -66,9 +66,6 @@
             case '/search-librarian':
                 require __DIR__ . '/src/public/pages/librarian-search.page.php';
                 break;
-            case '/search-member':
-                require __DIR__ . '/src/public/pages/member-search.page.php';
-                break;
                 
             default:
                 http_response_code(404);

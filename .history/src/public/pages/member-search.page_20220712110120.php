@@ -12,7 +12,7 @@
         if (isset($_POST['search-for'])) {
             $search = $_REQUEST["search"];
         }
-        $query = "SELECT * from authors_books where book_year like '%$search%' OR book_genre like '%$search%' OR author_name like '%$search%';"; //search books table by given parameter
+        $query = "SELECT * from authors_books where book_year like '%$search%' OR book_genre like '%$search%' OR book_author like '%$search%';"; //search books table by given parameter
         $result = $conn->query($query);
         
         if ($result->num_rows > 0) {
@@ -21,7 +21,7 @@
                 // display books        
                 $books .= ' <div class="book">
                                 <h4>'.$row["book_name"].'</h4>
-                                <p class="author">by '.$row["author_name"].'</p>
+                                <p class="author">by '.$row["book_author"].'</p>
                                 <p class="genre">'.$row["book_genre"].'</p>
                             </div>';
             };
