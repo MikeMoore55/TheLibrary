@@ -401,7 +401,7 @@ body{
     .home .sort-feature{
         position: absolute;
         top: 12%;
-        left: 10%;
+        left: 2%;
     }
     
     .home .sort-feature .sort-form{
@@ -426,10 +426,10 @@ body{
 
     .sort-feature{
         position: absolute;
-        top: 19%;
+        top: 13%;
     }
     .book-display{
-        top: 22%;
+        top: 20%;
         width: 90%;
         left: 5%;
         display: grid;
@@ -451,28 +451,6 @@ body{
     
     .book .genre{
         font-size: 1em;
-    }
-
-    .home .sort-feature{
-        position: absolute;
-        top: 15%;
-        left: 5%;
-    }
-    
-    .home .sort-feature .sort-form{
-        display: flex;
-    }
-    
-    .home .sort-feature .sort-form input{
-        font-size: 1.4em;
-    }
-
-    .home .sort-feature .sort-form select{
-        font-size: 1.3em;
-    }
-    
-    .home .sort-feature .sort-form .btn-override{
-        margin-left: 2%;
     }
     
 }

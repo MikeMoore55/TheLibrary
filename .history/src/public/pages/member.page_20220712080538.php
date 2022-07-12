@@ -53,7 +53,7 @@
                 <option value="book_author">book_author</option>
                 <option value="book_genre">book_genre</option>
             </select>
-            <input type="submit" name="sort-by" value="sort" class="btn btn-primary btn-override" >
+            <input type="submit" name="sort-by" value="sort" class="btn btn-primary mb-3" >
         </form>
     </div>
     <div class="book-display">
