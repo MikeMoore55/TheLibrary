@@ -90,6 +90,7 @@
 <main class="update">
     <!-- update form -->
     <form class="update-form" method="POST">
+        <span id="update-close" class="close-btn">X</span>
         <h3>Update Book</h3>
         <label for="book-option" class="form-label">
             Select the book you wish to edit/update:
@@ -118,8 +119,9 @@
             enter genre:
         </label>
         <input id="genre" type="text" class="form-control"  name="book_genre">
-        <p class="msg">(Please ensure all fields are filled out and new info is entered accordingly)</p>
-        <input id="update" type="submit" class="btn btn-primary mb-3 btn-override" name="update" value="Update">
-        <p class="link"><a href="librarian">cancel</a></p>
+        <br>
+        <p>(Please ensure all fields are filled out and new info is entered accordingly)</p>
+        <input id="add" type="submit" class="btn btn-primary mb-3 btn-override" name="update" value="Update">
+        <p><a href="librarian">cancel</a></p>
     </form>
 </main>

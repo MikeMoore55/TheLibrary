@@ -954,51 +954,14 @@ body{
     
     .update .update-form .link{
         text-align: center;
-        font-size: 1.3em;
     }
     
     .update .update-form .btn-override{
         position: relative;
         width: 50%;
         margin-left: 25%;
-        font-size: 1.7em;
     }
 }
 
 @media (min-width: 1000px) {
-    .update{
-        position: fixed;
-        top: 14%;
-        width: 60%;
-        left: 20%;
-    }
-    
-    .update .update-form h3{
-        text-align: center;
-        font-size: 1.3em;
-    }
-    
-    .update .update-form label{
-        text-transform: capitalize;
-        font-size: 0.9em;
-    }
-    
-    .update .update-form .msg{
-        color: rgb(96, 96, 96);
-        font-size: 0.8em;
-        text-align: center;
-    }
-    
-    .update .update-form .link{
-        text-align: center;
-        font-size: 0.9em;
-    }
-    
-    .update .update-form .btn-override{
-        position: relative;
-        width: 30%;
-        margin-left: 35%;
-        font-size: 0.9em;
-        padding: 0%;
-    }
 }

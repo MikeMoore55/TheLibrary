@@ -120,6 +120,6 @@
         <input id="genre" type="text" class="form-control"  name="book_genre">
         <p class="msg">(Please ensure all fields are filled out and new info is entered accordingly)</p>
         <input id="update" type="submit" class="btn btn-primary mb-3 btn-override" name="update" value="Update">
-        <p class="link"><a href="librarian">cancel</a></p>
+        <p><a href="librarian">cancel</a></p>
     </form>
 </main>

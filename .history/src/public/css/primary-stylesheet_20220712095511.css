@@ -975,30 +975,29 @@ body{
     
     .update .update-form h3{
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
     
     .update .update-form label{
         text-transform: capitalize;
-        font-size: 0.9em;
+        font-size: 1em;
     }
     
     .update .update-form .msg{
         color: rgb(96, 96, 96);
-        font-size: 0.8em;
+        font-size: 0.9em;
         text-align: center;
     }
     
     .update .update-form .link{
         text-align: center;
-        font-size: 0.9em;
+        font-size: 1em;
     }
     
     .update .update-form .btn-override{
         position: relative;
-        width: 30%;
-        margin-left: 35%;
-        font-size: 0.9em;
-        padding: 0%;
+        width: 50%;
+        margin-left: 25%;
+        font-size: 1em;
     }
 }

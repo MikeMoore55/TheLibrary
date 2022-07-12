@@ -996,8 +996,8 @@ body{
     
     .update .update-form .btn-override{
         position: relative;
-        width: 30%;
-        margin-left: 35%;
+        width: 50%;
+        margin-left: 25%;
         font-size: 0.9em;
         padding: 0%;
     }
