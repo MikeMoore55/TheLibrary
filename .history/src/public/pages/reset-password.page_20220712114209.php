@@ -92,7 +92,7 @@
 ?>
 
 <main class="forgot-password">
-<form class="reset-password-form" method="POST">
+<form class="reset-password-form form-control" method="POST">
         <h2>Reset Password</h2>
         <label for="username" class="form-label">
             Username:
