@@ -96,8 +96,9 @@
 
             // if successful, take to home page
             if ($conn->multi_query($sql_2) === TRUE) {
-                $_SESSION["error"] = FALSE;
+                $location = "signIn";
                 header("location: signIn") ;
+                $_SESSION["error"] = FALSE;
             }
             // if not, stay on current page 
             else {

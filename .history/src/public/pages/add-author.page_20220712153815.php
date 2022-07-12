@@ -1,4 +1,4 @@
-<!-- page for librarian to add new book to database -->
+<!-- page for librarian to add new author to database once the new book has been added -->
 
 <!-- 
     >>> naming convention <<<
@@ -34,7 +34,7 @@
         // initiate book author
         if (empty(trim($_POST["book_author"]))) {
             $book_author_error = "please fill in the blank area";
-            $book_author = "";
+            $book_name = "";
         } 
         else{
             $book_author_error = "";
@@ -63,7 +63,7 @@
 
         // sql insert statement
 
-        $sql .= "INSERT INTO books (book_name, book_author, book_year, book_genre) VALUES ('$book_name', '$book_author', '$book_year', '$book_genre')";
+        $sql .= "INSERT INTO author_info (author_name, author_age) VALUES ('$book_name', '$book_author')";
           
         // when successful, user will be taken back to librarian page, and new book will be added to list
         if ($conn->multi_query($sql) === TRUE) {
@@ -81,25 +81,17 @@
     <!-- add book form -->
     <form class="add-form" method="POST">
         <h3>New Book</h3>
-        <label for="book-name" class="form-label">
-            book name:
+        <label for="author-name" class="form-label">
+            author name:
         </label>
-        <input id="book-name" type="text" class="form-control" name="book_name">
+        <input id="author-name" type="text" class="form-control" name="author_name">
         <div class="invalid-feedback">
             Please fill in your username
         </div>
-        <label for="author" class="form-label">
-            author:
+        <label for="author_age" class="form-label">
+            author age:
         </label>
-        <input id="author" type="text" class="form-control" name="book_author">
-        <label for="released-date" class="form-label">
-            year released:
-        </label>
-        <input id="released-date" type="text" class="form-control"  name="book_year">
-        <label for="genre" class="form-label">
-            genre:
-        </label>
-        <input id="genre" type="text" class="form-control"  name="book_genre">
+        <input id="author_age" type="text" class="form-control" name="book_author">
         <br>
         <input id="add" type="submit" class="btn btn-primary mb-3 btn-override" name="add" value="Add">
         <p><a href="librarian">cancel</a></p>

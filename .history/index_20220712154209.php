@@ -54,17 +54,14 @@
             case '/add':
                 require __DIR__ . '/src/public/pages/add-book.page.php';
                 break;
-            case '/add-author':
-                require __DIR__ . '/src/public/pages/add-author.page.php';
+            case '/add':
+                require __DIR__ . '/src/public/pages/add-book.page.php';
                 break;
             case '/update':
                 require __DIR__ . '/src/public/pages/update-book.page.php';
                 break;
             case '/del':
                 require __DIR__ . '/src/public/pages/delete-book.page.php';
-                break;
-            case '/del-author':
-                require __DIR__ . '/src/public/pages/del-author.page.php';
                 break;
             case '/restPassword':
                 require __DIR__ . '/src/public/pages/reset-password.page.php';

@@ -63,9 +63,6 @@
             case '/del':
                 require __DIR__ . '/src/public/pages/delete-book.page.php';
                 break;
-            case '/del-author':
-                require __DIR__ . '/src/public/pages/del-author.page.php';
-                break;
             case '/restPassword':
                 require __DIR__ . '/src/public/pages/reset-password.page.php';
                 break;

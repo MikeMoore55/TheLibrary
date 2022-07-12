@@ -11,15 +11,6 @@
 <?php
     session_start();
 
-    // make sure user is signed in
-    if($_SESSION["is-signed-in"] === FALSE){
-        header("location: signIn");
-    };
-    // make user user is librarian 
-    if($_SESSION["is_librarian"] == FALSE){
-        header("location: member");
-    };
-
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
     // connect to db
     $conn = connect();
@@ -65,12 +56,10 @@
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="add-author">Add a New Author</a></p>
         <!-- update books -->
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="update">Update a Book</a></p>
-        <!-- i felt the need to update an author to be silly so i did not need add it in -->
         <!-- delete books -->
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del">Delete a Book</a></p>
         <!-- delete Author -->
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del-author">Delete an Author</a></p>
-        <!-- search -->
+        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del">Delete an Author</a></p>
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="search-librarian">Search for a Book</a></p>
     </div>
     <!-- area where all books will be displayed even once edited -->

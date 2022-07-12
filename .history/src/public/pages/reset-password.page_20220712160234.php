@@ -96,8 +96,9 @@
 
             // if successful, take to home page
             if ($conn->multi_query($sql_2) === TRUE) {
-                $_SESSION["error"] = FALSE;
+                $location = "signIn";
                 header("location: signIn") ;
+                $_SESSION["error"] = FALSE
             }
             // if not, stay on current page 
             else {
@@ -114,15 +115,15 @@
             Username:
         </label>
         <input id="username" type="text" class="form-control" name="username">
-        <div id="error" class="error">
-            <?php echo $username_error;?>
+        <div class="invalid-feedback">
+            Please fill in your username
         </div>
         <label for="password" class="form-label">
             New-Password:
         </label>
         <input id="password" type="password" class="form-control" placeholder="*****" name="new_password">
-        <div id="error" class="error">
-            <?php echo $password_error;?>
+        <div class="invalid-feedback">
+            Please fill in your password.
         </div>
         <br>
         <input id="sign-in" type="submit" class="btn btn-primary mb-3 btn-override" name="signIn" value="Sign In">

@@ -95,9 +95,9 @@
             $sql_2 .= "UPDATE user_info SET user_password = '$new_password_input' WHERE username = '$username_input';";
 
             // if successful, take to home page
-            if ($conn->multi_query($sql_2) === TRUE) {
-                $_SESSION["error"] = FALSE;
+            if ($conn->multi_query($sql_2) === TRUE && $_SESSION["error"] = FALSE) {
                 header("location: signIn") ;
+                $_SESSION["error"] = FALSE;
             }
             // if not, stay on current page 
             else {

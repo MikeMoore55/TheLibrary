@@ -11,15 +11,6 @@
 <?php
     session_start();
 
-    // make sure user is signed in
-    if($_SESSION["is-signed-in"] === FALSE){
-        header("location: signIn");
-    };
-    // make user user is librarian 
-    if($_SESSION["is_librarian"] == FALSE){
-        header("location: member");
-    };
-
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
     // connect to db
     $conn = connect();

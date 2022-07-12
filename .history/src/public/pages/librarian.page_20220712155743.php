@@ -15,10 +15,8 @@
     if($_SESSION["is-signed-in"] === FALSE){
         header("location: signIn");
     };
-    // make user user is librarian 
-    if($_SESSION["is_librarian"] == FALSE){
-        header("location: member");
-    };
+    // define default user type as member 
+    $_SESSION["is_librarian"] == FALSE;
 
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
     // connect to db

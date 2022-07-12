@@ -17,8 +17,8 @@
     };
     // make user user is librarian 
     if($_SESSION["is_librarian"] == FALSE){
-        header("location: member");
-    };
+        header("location: member")
+    }
 
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
     // connect to db
