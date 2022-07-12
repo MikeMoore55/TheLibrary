@@ -18,7 +18,7 @@
     // user signed in false as default
     $_SESSION["is-signed-in"] === FALSE;
     // define default user type as member 
-    $_SESSION["is_librarian"] === FALSE;
+    $_SESSION["is_librarian"] == FALSE;
     
      /* check if any errors, if there is will display helpers under input boxes */
      if ($_SESSION["error"] = TRUE) {
@@ -106,7 +106,7 @@
             echo "user identified, access granted!";
             $_SESSION["is-signed-in"] === TRUE;
             // if user librarian, send to "librarian page"
-            if ($user_verified_type == "librarian") {
+            if ($user_verified_type === "librarian") {
                 $_SESSION["is_librarian"] === TRUE;
                 $_SESSION["is-signed-in"] === TRUE;
                 header("location: librarian"); 

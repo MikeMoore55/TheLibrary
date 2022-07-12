@@ -18,7 +18,7 @@
     // user signed in false as default
     $_SESSION["is-signed-in"] === FALSE;
     // define default user type as member 
-    $_SESSION["is_librarian"] === FALSE;
+    $_SESSION["is_librarian"] == FALSE;
     
      /* check if any errors, if there is will display helpers under input boxes */
      if ($_SESSION["error"] = TRUE) {
@@ -107,16 +107,15 @@
             $_SESSION["is-signed-in"] === TRUE;
             // if user librarian, send to "librarian page"
             if ($user_verified_type == "librarian") {
-                $_SESSION["is_librarian"] === TRUE;
-                $_SESSION["is-signed-in"] === TRUE;
+                $_SESSION["is_librarian"] == TRUE;
+                $_SESSION["is-signed-in"] == TRUE;
                 header("location: librarian"); 
-                $_SESSION["error"] === FALSE;
+                $_SESSION["error"] = FALSE;
 
             }
             else{
-                header("location: member");
-                $_SESSION["is_librarian"] === FALSE;
-                $_SESSION["error"] === FALSE;
+                header("location: member") ;
+                $_SESSION["error"] = TRUE;
                 $sign_in_error = "this username or password don't match, please try again";
             }
         }

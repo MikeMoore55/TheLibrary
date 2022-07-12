@@ -106,7 +106,7 @@
             echo "user identified, access granted!";
             $_SESSION["is-signed-in"] === TRUE;
             // if user librarian, send to "librarian page"
-            if ($user_verified_type == "librarian") {
+            if ($user_verified_type === "librarian") {
                 $_SESSION["is_librarian"] === TRUE;
                 $_SESSION["is-signed-in"] === TRUE;
                 header("location: librarian"); 
