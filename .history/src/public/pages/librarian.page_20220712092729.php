@@ -50,7 +50,7 @@
     <div class="admin-buttons">
         <h3>Control Panel</h3>
         <!-- add books -->
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="add">Add a New Book</a></p>
+        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del">Add a New Book</a></p>
         <!-- update books -->
         <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="update">Update a Book</a></p>
         <!-- delete books -->

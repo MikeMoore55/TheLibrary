@@ -50,11 +50,19 @@
     <div class="admin-buttons">
         <h3>Control Panel</h3>
         <!-- add books -->
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="add">Add a New Book</a></p>
+        <form action="add-book" method="POST">
+            <input id="add-btn" type="submit" value="Add a New Book" name="updateBook" class="btn btn-primary mb-3 buttons-override">
+        </form>
+
         <!-- update books -->
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="update">Update a Book</a></p>
+        <form action="update" method="POST">
+            <input id="update-btn" type="submit" value="Update a Book" name="updateBook" class="btn btn-primary mb-3 buttons-override">
+        </form>
+        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="update">here</a></p>
         <!-- delete books -->
-        <p class="btn btn-primary mb-3 buttons-override"><a style="color: white;" href="del">Delete a Book</a></p>
+        <form action="del" method="POST">
+            <input id="del-btn" type="submit" value="Delete a Book" name="delBook" class="btn btn-primary mb-3 buttons-override">
+        </form>
     </div>
     <!-- area where all books will be displayed even once edited -->
     <div class="book-list">

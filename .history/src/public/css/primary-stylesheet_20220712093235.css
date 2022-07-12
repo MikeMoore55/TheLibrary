@@ -814,81 +814,13 @@ body{
     left: 25%;
 }
 
-.del-book .del-form p{
-    text-align: center;
-}
-
 /* media queries for del page */
 
-@media (min-width: 500px) {
-    
-    .del-book{
-        position: fixed;
-        top: 25%;
-        width: 70%;
-        left: 15%;
-    }
-    
-    .del-book .del-form h3{
-        text-align: center;
-        font-size: 3em;
-    }
-    
-    .del-book .del-form label{
-        text-align: center;
-        font-size: 2em;
-    }
+@media (min-width: 1000px) {
 
-    .del-book .del-form .btn-override select{
-        font-size: 1.5em;
-    }
-    
-    .del-book .del-form .btn-override{
-        position: relative;
-        width: 50%;
-        left: 25%;
-        font-size: 1.8em;
-    }
-
-    .del-book .del-form p{
-        text-align: center;
-        font-size: 1.5em;
-    }
 }
 
 @media (min-width: 1000px) {
-    .del-book{
-        position: fixed;
-        top: 25%;
-        width: 60%;
-        left: 20%;
-    }
-    
-    .del-book .del-form h3{
-        text-align: center;
-        font-size: 2.5em;
-    }
-    
-    .del-book .del-form label{
-        text-align: center;
-        font-size: 1.5em;
-    }
-
-    .del-book .del-form .btn-override select{
-        font-size: 1.2em;
-    }
-    
-    .del-book .del-form .btn-override{
-        position: relative;
-        width: 50%;
-        left: 25%;
-        font-size: 1.5em;
-    }
-
-    .del-book .del-form p{
-        text-align: center;
-        font-size: 1em;
-    }
 
 }
 

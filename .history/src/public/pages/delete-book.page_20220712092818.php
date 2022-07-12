@@ -44,7 +44,7 @@
         </select>
         <br>
         <input id="remove" type="submit" class="btn btn-primary mb-3 btn-override" name="remove" value="Remove">
-        <p><a href="librarian">cancel</a></p>
+
     </form>
 </main>
 

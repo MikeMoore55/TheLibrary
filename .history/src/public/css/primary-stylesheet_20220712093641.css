@@ -814,10 +814,6 @@ body{
     left: 25%;
 }
 
-.del-book .del-form p{
-    text-align: center;
-}
-
 /* media queries for del page */
 
 @media (min-width: 500px) {
@@ -849,11 +845,6 @@ body{
         left: 25%;
         font-size: 1.8em;
     }
-
-    .del-book .del-form p{
-        text-align: center;
-        font-size: 1.5em;
-    }
 }
 
 @media (min-width: 1000px) {
@@ -884,12 +875,6 @@ body{
         left: 25%;
         font-size: 1.5em;
     }
-
-    .del-book .del-form p{
-        text-align: center;
-        font-size: 1em;
-    }
-
 }
 
 
