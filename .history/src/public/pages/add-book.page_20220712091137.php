@@ -101,7 +101,7 @@
         </label>
         <input id="genre" type="text" class="form-control"  name="book_genre">
         <br>
+        <p><a href="librarian">Never mind</a></p>
         <input id="add" type="submit" class="btn btn-primary mb-3 btn-override" name="add" value="Add">
-        <p><a href="librarian">cancel</a></p>
     </form>
 </main>
