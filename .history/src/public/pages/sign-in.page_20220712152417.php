@@ -48,12 +48,12 @@
 
         // validate username
         if (empty(trim($_POST["username"]))) {
-            $username_error = "**Please enter a username.**";
+            $username_error = "Please enter a username.";
             $username_input = "";
             $_SESSION["error"] = TRUE;
         } 
         elseif (!preg_match('/^[a-zA-Z0-9_]+$/',($_POST["username"]))) {
-            $username_error = "**Username can only contain letters, numbers, and underscores.**";
+            $username_error = "Username can only contain letters, numbers, and underscores.";
             $username_input = "";
             $_SESSION["error"] = TRUE;
         } 

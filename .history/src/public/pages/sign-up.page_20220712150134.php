@@ -12,23 +12,18 @@
     include "/MAMP/htdocs/TheLibrary/config/database.config.php";
 
     session_start();
+
+    $_SESSION["error"] = FALSE;
     // connect to db
     $conn = connect();
-    /* check if any errors, if there is will display helpers under input boxes */
-    if ($_SESSION["error"] = TRUE) {
-        echo '  <script>
-                    document.querySelector("#error").style.display = "block";
-                    document.querySelector("#error").style.color = "red"
-                </script>';
+
+/*     if ($_SESSION["error"] = TRUE) {
     } 
     elseif ($_SESSION["error"] = FALSE){
-        echo '  <script>
-                    document.querySelector("#error").style.display = "none";
-                </script>';
     }
     else{
         echo "error";
-    }
+    } */
 
     // Define variables and initialize with empty values
     $username = $password = $age = $user_type = "";
@@ -40,16 +35,14 @@
 
         //username
 
-        // NB, make so username cant be like others in db
-
         //check that username requirements are met
         if (empty(trim($_POST["username"]))) {
-            $username_error = "**Please enter a username.**";
+            $error = "Please enter a username.";
             $username = "";
             $_SESSION["error"] = TRUE;
         } 
         elseif (!preg_match('/^[a-zA-Z0-9_]+$/',($_POST["username"]))) {
-            $username_error = "**Username can only contain letters, numbers, and underscores.**";
+            $error = "Username can only contain letters, numbers, and underscores.";
             $username = "";
             $_SESSION["error"] = TRUE;
         } else {
@@ -62,16 +55,16 @@
 
         //check that age requirements are met
         if (empty(trim($_POST["age"]))) {
-            $age_error = "**Please enter a password.**";
+            $error = "Please enter a password.";
             $age = "";
             $_SESSION["error"] = TRUE;
         } elseif ($_POST["age"] <= 10) {
-            $age_error = "**You must be at least 10 years old.**";
+            $error = "You must be at least 10 years old.";
             $age = "";
             $_SESSION["error"] = TRUE;
         } else {
             $age = $_POST["age"];
-            $age_error = "";
+            $error = "";
             $_SESSION["error"] = FALSE;
         }
 
@@ -79,16 +72,16 @@
        
         //check that password requirments are met
         if (empty(trim($_POST["password"]))) {
-            $password_error = "**Please enter a password.**";
+            $error = "Please enter a password.";
             $password = "";
             $_SESSION["error"] = TRUE;
         } elseif (strlen(trim($_POST["password"])) <= 6) {
-            $password_error = "**Password must have at least 6 characters.**";
+            $error = "Password must have at least 6 characters.";
             $password = "";
             $_SESSION["error"] = TRUE;
         } else {
             $password = trim($_POST["password"]);
-            $password_error = "";
+            $error = "";
             $_SESSION["error"] = FALSE;
         }
 
@@ -97,17 +90,17 @@
         //makes member user type default
         if ($_POST["userType"] === "librarian") {
             $user_type = "librarian";
-            $user_error = "";
+            $error = "";
         }else{
             $user_type = "member";
-            $user_error = "";
+            $error = "";
         }
 
        // insert the input values to database
         $sql .= "INSERT INTO user_info (username, user_age, user_password, user_type) VALUES ('$username', '$age', '$password', '$user_type')";
         
         // if successful, take to home page
-        if ($conn->multi_query($sql) === TRUE && $error === "") {
+        if ($conn->multi_query($sql) === TRUE) {
            header("location: signIn");
            $_SESSION["error"] = FALSE;
         }
@@ -131,7 +124,7 @@
             Username:
         </label>
         <input id="username" type="text" class="form-control" name="username" placeholder="username">
-        <div id="error" class="error">
+        <div class="invalid-feedback">
             <?php echo $username_error?>
         </div>
 
@@ -139,24 +132,24 @@
             Age:
         </label>
         <input id="age" type="age" class="form-control" name="age">
-        <div id="error" class="error">
+        <div class="invalid-feedback">
             <?php echo $age_error?>
         </div>
-        <label for="user-type" class="error">
+        <label for="user-type" class="form-label">
             User Type:
         </label>
         <select id="user-type" class="form-select" aria-label="Default select example" name="userType">
             <option>member</option>
             <option>librarian</option>
         </select>
-        <div id="error" class="error">
+        <div class="invalid-feedback">
             <?php echo $userType_error?>
         </div>
         <label for="password" class="form-label">
             Password:
         </label>
         <input id="password" type="password" class="form-control" placeholder="*****" name="password">
-        <div id="error" class="error">
+        <div class="invalid-feedback">
             <?php echo $password_error?>
         </div>
         <p><?php echo $error; ?></p>

@@ -40,8 +40,6 @@
 
         //username
 
-        // NB, make so username cant be like others in db
-
         //check that username requirements are met
         if (empty(trim($_POST["username"]))) {
             $username_error = "**Please enter a username.**";

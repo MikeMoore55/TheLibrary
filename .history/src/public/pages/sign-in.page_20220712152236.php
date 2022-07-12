@@ -48,12 +48,12 @@
 
         // validate username
         if (empty(trim($_POST["username"]))) {
-            $username_error = "**Please enter a username.**";
+            $username_error = "Please enter a username.";
             $username_input = "";
             $_SESSION["error"] = TRUE;
         } 
         elseif (!preg_match('/^[a-zA-Z0-9_]+$/',($_POST["username"]))) {
-            $username_error = "**Username can only contain letters, numbers, and underscores.**";
+            $username_error = "Username can only contain letters, numbers, and underscores.";
             $username_input = "";
             $_SESSION["error"] = TRUE;
         } 
@@ -66,12 +66,12 @@
 
         // validate password
         if (empty(trim($_POST["password"]))) {
-            $password_error = "**Please enter a password.**";
+            $password_error = "Please enter a password.";
             $password_input = "";
             $_SESSION["error"] = TRUE;
         } 
         elseif (strlen(trim($_POST["password"])) <= 6) {
-            $password_error = "**Password must have at least 6 characters.**";
+            $password_error = "Password must have at least 6 characters.";
             $password_input = "";
             $_SESSION["error"] = TRUE;
 
@@ -110,14 +110,14 @@
             // if user librarian, send to "librarian page"
             if ($user_verified_type === "librarian") {
                 $_SESSION["is_librarian"] == TRUE;
-                $_SESSION["is-signed-in"] == TRUE;
-                header("location: librarian"); 
+                $_SESSION["is-signed-in"]
+                header("location: librarian") ; 
                 $_SESSION["error"] = FALSE;
 
             }
             else{
                 header("location: member") ;
-                $_SESSION["error"] = TRUE;
+                $_SESSION["error"] = 1;
                 $sign_in_error = "this username or password don't match, please try again";
             }
         }
@@ -138,15 +138,15 @@
             Username:
         </label>
         <input id="username" type="text" class="form-control" name="username">
-        <div id="error" class="error">
-            <?php echo $username_error?>
+        <div class="invalid-feedback">
+            Please fill in your username
         </div>
         <label for="password" class="form-label">
             Password:
         </label>
         <input id="password" type="password" class="form-control" placeholder="*****" name="password">
-        <div id="error" class="error">
-            <?php echo $password_error?>
+        <div class="invalid-feedback">
+            Please fill in your password.
         </div>
         <p><a href="restPassword">Forgot Password?</a></p>
         <br>

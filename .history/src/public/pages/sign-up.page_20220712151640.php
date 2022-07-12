@@ -14,11 +14,10 @@
     session_start();
     // connect to db
     $conn = connect();
-    /* check if any errors, if there is will display helpers under input boxes */
+
     if ($_SESSION["error"] = TRUE) {
         echo '  <script>
                     document.querySelector("#error").style.display = "block";
-                    document.querySelector("#error").style.color = "red"
                 </script>';
     } 
     elseif ($_SESSION["error"] = FALSE){
@@ -40,16 +39,14 @@
 
         //username
 
-        // NB, make so username cant be like others in db
-
         //check that username requirements are met
         if (empty(trim($_POST["username"]))) {
-            $username_error = "**Please enter a username.**";
+            $username_error = "Please enter a username.";
             $username = "";
             $_SESSION["error"] = TRUE;
         } 
         elseif (!preg_match('/^[a-zA-Z0-9_]+$/',($_POST["username"]))) {
-            $username_error = "**Username can only contain letters, numbers, and underscores.**";
+            $username_error = "Username can only contain letters, numbers, and underscores.";
             $username = "";
             $_SESSION["error"] = TRUE;
         } else {
@@ -62,11 +59,11 @@
 
         //check that age requirements are met
         if (empty(trim($_POST["age"]))) {
-            $age_error = "**Please enter a password.**";
+            $age_error = "Please enter a password.";
             $age = "";
             $_SESSION["error"] = TRUE;
         } elseif ($_POST["age"] <= 10) {
-            $age_error = "**You must be at least 10 years old.**";
+            $age_error = "You must be at least 10 years old.";
             $age = "";
             $_SESSION["error"] = TRUE;
         } else {
@@ -79,11 +76,11 @@
        
         //check that password requirments are met
         if (empty(trim($_POST["password"]))) {
-            $password_error = "**Please enter a password.**";
+            $password_error = "Please enter a password.";
             $password = "";
             $_SESSION["error"] = TRUE;
         } elseif (strlen(trim($_POST["password"])) <= 6) {
-            $password_error = "**Password must have at least 6 characters.**";
+            $password_error = "Password must have at least 6 characters.";
             $password = "";
             $_SESSION["error"] = TRUE;
         } else {
